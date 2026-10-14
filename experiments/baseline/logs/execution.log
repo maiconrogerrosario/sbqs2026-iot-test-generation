@@ -1,0 +1,322 @@
+C:\Users\maico\AppData\Local\Programs\Python\Python313\python.exe C:\Projetos\Dissertação\iot-test-generation\app2.py 
+2026-10-14 16:47:52,035 [INFO] app_ontologia: Buscando arquivos de ontologia na pasta: ./ontologias/
+2026-10-14 16:47:52,036 [INFO] app_ontologia: Arquivos encontrados: ['./ontologias\\DS18B20.yml', './ontologias\\HCSR04.yml']
+2026-10-14 16:47:52,061 [INFO] app_ontologia: Ontologia 'DS18B20' carregada com sucesso do arquivo: DS18B20.yml
+2026-10-14 16:47:52,095 [INFO] app_ontologia: Ontologia 'HCSR04' carregada com sucesso do arquivo: HCSR04.yml
+2026-10-14 16:47:52,095 [INFO] app_ontologia: Total de ontologias em memória: ['DS18B20', 'HCSR04']
+2026-10-14 16:47:52,098 [INFO] app_ontologia: Iniciando o servidor Flask de Ontologia IoT...
+ * Serving Flask app 'app2'
+ * Debug mode: on
+2026-10-14 16:47:52,153 [INFO] werkzeug: WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5000
+2026-10-14 16:47:52,153 [INFO] werkzeug: Press CTRL+C to quit
+2026-10-14 16:47:52,156 [INFO] werkzeug:  * Restarting with stat
+2026-10-14 16:47:57,103 [INFO] app_ontologia: Buscando arquivos de ontologia na pasta: ./ontologias/
+2026-10-14 16:47:57,103 [INFO] app_ontologia: Arquivos encontrados: ['./ontologias\\DS18B20.yml', './ontologias\\HCSR04.yml']
+2026-10-14 16:47:57,146 [INFO] app_ontologia: Ontologia 'DS18B20' carregada com sucesso do arquivo: DS18B20.yml
+2026-10-14 16:47:57,209 [INFO] app_ontologia: Ontologia 'HCSR04' carregada com sucesso do arquivo: HCSR04.yml
+2026-10-14 16:47:57,209 [INFO] app_ontologia: Total de ontologias em memória: ['DS18B20', 'HCSR04']
+2026-10-14 16:47:57,215 [INFO] app_ontologia: Iniciando o servidor Flask de Ontologia IoT...
+2026-10-14 16:47:57,287 [WARNING] werkzeug:  * Debugger is active!
+2026-10-14 16:47:57,309 [INFO] werkzeug:  * Debugger PIN: 121-209-052
+2026-10-14 16:47:57,399 [INFO] app_ontologia: Rota /sensor/DS18B20 chamada com método: GET
+2026-10-14 16:47:57,400 [INFO] app_ontologia: Acessando a rota Home (/).
+2026-10-14 16:47:57,400 [DEBUG] app_ontologia: Construindo campos do formulário a partir de 'properties'.
+2026-10-14 16:47:57,408 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasSignalType (Default: Digital, Opções: [Digital])
+2026-10-14 16:47:57,408 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasMeasurementUnit (Default: Celsius, Opções: [Celsius,Fahrenheit])
+2026-10-14 16:47:57,408 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasMinValue (Default: -55, Opções: [])
+2026-10-14 16:47:57,409 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasMaxValue (Default: 125, Opções: [])
+2026-10-14 16:47:57,409 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasResolution (Default: 0.0625, Opções: [])
+2026-10-14 16:47:57,409 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasCommunicationProtocol (Default: 1-Wire, Opções: [])
+2026-10-14 16:47:57,409 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasPlatform (Default: Arduino, Opções: [])
+2026-10-14 16:47:57,409 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasPowerSupply (Default: 3.0V - 5.5V, Opções: [])
+2026-10-14 16:47:57,409 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasErrorValue (Default: -127.0, Opções: [])
+2026-10-14 16:47:57,409 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasStableReadingThreshold (Default: 0.5, Opções: [])
+2026-10-14 16:47:57,409 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasStableReadingDuration (Default: 5, Opções: [])
+2026-10-14 16:47:57,409 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasPins (Default: 2, Opções: [2,10])
+2026-10-14 16:47:57,410 [DEBUG] app_ontologia: Propriedade 'hasDependencies' ignorada: editable=False.
+2026-10-14 16:47:57,410 [DEBUG] app_ontologia: Propriedade 'hasHardwareInitialization' ignorada: tipo é 'object'.
+2026-10-14 16:47:57,410 [DEBUG] app_ontologia: Propriedade 'hasFunctionalInterface' ignorada: editable=False.
+2026-10-14 16:47:57,438 [INFO] werkzeug: 127.0.0.1 - - [14/Oct/2026 16:47:57] "GET /sensor/DS18B20 HTTP/1.1" 200 -
+2026-10-14 16:47:57,444 [INFO] werkzeug: 127.0.0.1 - - [14/Oct/2026 16:47:57] "GET / HTTP/1.1" 200 -
+2026-10-14 16:47:58,428 [INFO] app_ontologia: Rota de visualização por plataforma acionada: Arduino
+2026-10-14 16:47:58,429 [DEBUG] app_ontologia: Sensores encontrados para a plataforma 'Arduino': ['DS18B20', 'HCSR04']
+2026-10-14 16:47:58,440 [INFO] werkzeug: 127.0.0.1 - - [14/Oct/2026 16:47:58] "GET /plataforma/Arduino HTTP/1.1" 200 -
+2026-10-14 16:47:59,394 [INFO] app_ontologia: Rota /sensor/DS18B20 chamada com método: GET
+2026-10-14 16:47:59,394 [DEBUG] app_ontologia: Construindo campos do formulário a partir de 'properties'.
+2026-10-14 16:47:59,394 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasSignalType (Default: Digital, Opções: [Digital])
+2026-10-14 16:47:59,394 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasMeasurementUnit (Default: Celsius, Opções: [Celsius,Fahrenheit])
+2026-10-14 16:47:59,394 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasMinValue (Default: -55, Opções: [])
+2026-10-14 16:47:59,394 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasMaxValue (Default: 125, Opções: [])
+2026-10-14 16:47:59,395 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasResolution (Default: 0.0625, Opções: [])
+2026-10-14 16:47:59,395 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasCommunicationProtocol (Default: 1-Wire, Opções: [])
+2026-10-14 16:47:59,395 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasPlatform (Default: Arduino, Opções: [])
+2026-10-14 16:47:59,395 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasPowerSupply (Default: 3.0V - 5.5V, Opções: [])
+2026-10-14 16:47:59,395 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasErrorValue (Default: -127.0, Opções: [])
+2026-10-14 16:47:59,395 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasStableReadingThreshold (Default: 0.5, Opções: [])
+2026-10-14 16:47:59,395 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasStableReadingDuration (Default: 5, Opções: [])
+2026-10-14 16:47:59,395 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasPins (Default: 2, Opções: [2,10])
+2026-10-14 16:47:59,396 [DEBUG] app_ontologia: Propriedade 'hasDependencies' ignorada: editable=False.
+2026-10-14 16:47:59,396 [DEBUG] app_ontologia: Propriedade 'hasHardwareInitialization' ignorada: tipo é 'object'.
+2026-10-14 16:47:59,396 [DEBUG] app_ontologia: Propriedade 'hasFunctionalInterface' ignorada: editable=False.
+2026-10-14 16:47:59,397 [INFO] werkzeug: 127.0.0.1 - - [14/Oct/2026 16:47:59] "GET /sensor/DS18B20 HTTP/1.1" 200 -
+2026-10-14 16:48:02,853 [INFO] app_ontologia: Rota /sensor/DS18B20 chamada com método: POST
+2026-10-14 16:48:02,853 [DEBUG] app_ontologia: Construindo campos do formulário a partir de 'properties'.
+2026-10-14 16:48:02,853 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasSignalType (Default: Digital, Opções: [Digital])
+2026-10-14 16:48:02,853 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasMeasurementUnit (Default: Celsius, Opções: [Celsius,Fahrenheit])
+2026-10-14 16:48:02,853 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasMinValue (Default: -55, Opções: [])
+2026-10-14 16:48:02,853 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasMaxValue (Default: 125, Opções: [])
+2026-10-14 16:48:02,853 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasResolution (Default: 0.0625, Opções: [])
+2026-10-14 16:48:02,853 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasCommunicationProtocol (Default: 1-Wire, Opções: [])
+2026-10-14 16:48:02,853 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasPlatform (Default: Arduino, Opções: [])
+2026-10-14 16:48:02,853 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasPowerSupply (Default: 3.0V - 5.5V, Opções: [])
+2026-10-14 16:48:02,853 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasErrorValue (Default: -127.0, Opções: [])
+2026-10-14 16:48:02,854 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasStableReadingThreshold (Default: 0.5, Opções: [])
+2026-10-14 16:48:02,854 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasStableReadingDuration (Default: 5, Opções: [])
+2026-10-14 16:48:02,854 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasPins (Default: 2, Opções: [2,10])
+2026-10-14 16:48:02,854 [DEBUG] app_ontologia: Propriedade 'hasDependencies' ignorada: editable=False.
+2026-10-14 16:48:02,854 [DEBUG] app_ontologia: Propriedade 'hasHardwareInitialization' ignorada: tipo é 'object'.
+2026-10-14 16:48:02,854 [DEBUG] app_ontologia: Propriedade 'hasFunctionalInterface' ignorada: editable=False.
+2026-10-14 16:48:02,858 [INFO] app_ontologia: Coletando respostas enviadas pelo formulário HTTP POST.
+2026-10-14 16:48:02,858 [DEBUG] app_ontologia: Resposta capturada -> hasSignalType: Digital
+2026-10-14 16:48:02,858 [DEBUG] app_ontologia: Resposta capturada -> hasMeasurementUnit: Celsius
+2026-10-14 16:48:02,859 [DEBUG] app_ontologia: Resposta capturada -> hasMinValue: -55
+2026-10-14 16:48:02,859 [DEBUG] app_ontologia: Resposta capturada -> hasMaxValue: 125
+2026-10-14 16:48:02,859 [DEBUG] app_ontologia: Resposta capturada -> hasResolution: 0.0625
+2026-10-14 16:48:02,859 [DEBUG] app_ontologia: Resposta capturada -> hasCommunicationProtocol: 1-Wire
+2026-10-14 16:48:02,859 [DEBUG] app_ontologia: Resposta capturada -> hasPlatform: Arduino
+2026-10-14 16:48:02,859 [DEBUG] app_ontologia: Resposta capturada -> hasPowerSupply: 3.0V - 5.5V
+2026-10-14 16:48:02,859 [DEBUG] app_ontologia: Resposta capturada -> hasErrorValue: -127.0
+2026-10-14 16:48:02,859 [DEBUG] app_ontologia: Resposta capturada -> hasStableReadingThreshold: 0.5
+2026-10-14 16:48:02,859 [DEBUG] app_ontologia: Resposta capturada -> hasStableReadingDuration: 5
+2026-10-14 16:48:02,859 [DEBUG] app_ontologia: Resposta capturada -> hasPins: 2
+2026-10-14 16:48:02,859 [DEBUG] app_ontologia: Resposta capturada -> hasTestMode: Sensor Físico
+2026-10-14 16:48:02,859 [INFO] app_ontologia: ================ CONSTRUINDO PROMPT ================
+2026-10-14 16:48:02,859 [INFO] app_ontologia: Sensor: DS18B20
+2026-10-14 16:48:02,860 [INFO] app_ontologia: Modo de teste: Sensor Físico
+2026-10-14 16:48:02,860 [INFO] app_ontologia: 📏 Tamanho do prompt: 164 caracteres
+2026-10-14 16:48:02,860 [INFO] app_ontologia: 
+================================================================================
+2026-10-14 16:48:02,860 [INFO] app_ontologia: 📝 PROMPT ENVIADO:
+2026-10-14 16:48:02,860 [INFO] app_ontologia: ================================================================================
+2026-10-14 16:48:02,860 [INFO] app_ontologia: Contexto:
+Gerar casos de teste para validar o comportamento do componente físico do sensor DS18B20
+integrado à plataforma alvo.
+
+
+
+Modo de execução: Sensor Físico
+
+
+2026-10-14 16:48:02,860 [INFO] app_ontologia: 
+================================================================================
+2026-10-14 16:48:02,860 [INFO] app_ontologia: 🚀 Chamando a API da OpenAI com o modelo 'gpt-4o-mini'...
+2026-10-14 16:48:02,860 [INFO] app_ontologia: 📏 Tamanho do prompt: 164 caracteres
+2026-10-14 16:48:04,897 [DEBUG] openai._base_client: Request options: {'method': 'post', 'url': '/chat/completions', 'timeout': 90, 'files': None, 'idempotency_key': 'stainless-python-retry-dbadc683-5470-4f08-a27e-96ed645a993b', 'security': {'bearer_auth': True}, 'content': None, 'json_data': {'messages': [{'role': 'system', 'content': 'Você é um especialista em C++ e Arduino para IoT. Siga ESTRITAMENTE as instruções do usuário. Gere APENAS o código solicitado, sem explicações.'}, {'role': 'user', 'content': 'Contexto:\nGerar casos de teste para validar o comportamento do componente físico do sensor DS18B20\nintegrado à plataforma alvo.\n\n\n\nModo de execução: Sensor Físico\n\n'}], 'model': 'gpt-4o-mini', 'frequency_penalty': 0.1, 'max_tokens': 3500, 'presence_penalty': 0.1, 'temperature': 0.1, 'top_p': 0.95}}
+2026-10-14 16:48:05,041 [DEBUG] openai._base_client: Sending HTTP Request: POST https://api.openai.com/v1/chat/completions
+2026-10-14 16:48:05,042 [DEBUG] httpcore.connection: connect_tcp.started host='api.openai.com' port=443 local_address=None timeout=90 socket_options=None
+2026-10-14 16:48:05,137 [DEBUG] httpcore.connection: connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000021B30AC4050>
+2026-10-14 16:48:05,138 [DEBUG] httpcore.connection: start_tls.started ssl_context=<ssl.SSLContext object at 0x0000021B2FDC6F30> server_hostname='api.openai.com' timeout=90
+2026-10-14 16:48:05,177 [DEBUG] httpcore.connection: start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000021B307EAC10>
+2026-10-14 16:48:05,177 [DEBUG] httpcore.http11: send_request_headers.started request=<Request [b'POST']>
+2026-10-14 16:48:05,178 [DEBUG] httpcore.http11: send_request_headers.complete
+2026-10-14 16:48:05,178 [DEBUG] httpcore.http11: send_request_body.started request=<Request [b'POST']>
+2026-10-14 16:48:05,178 [DEBUG] httpcore.http11: send_request_body.complete
+2026-10-14 16:48:05,178 [DEBUG] httpcore.http11: receive_response_headers.started request=<Request [b'POST']>
+2026-10-14 16:48:07,757 [DEBUG] httpcore.http11: receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Wed, 14 Oct 2026 22:42:17 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'CF-Ray', b'a4aa189c6d6b644b-GIG'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Server', b'cloudflare'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'X-Content-Type-Options', b'nosniff'), (b'access-control-expose-headers', b'X-Request-ID'), (b'access-control-expose-headers', b'CF-Ray'), (b'Access-Control-Expose-Headers', b'CF-Ray'), (b'openai-organization', b'maicon-roger'), (b'openai-processing-ms', b'1604'), (b'openai-project', b'proj_zT2uDrjjynpKS15AtA0hXtN5'), (b'openai-version', b'2020-10-01'), (b'x-openai-proxy-wasm', b'v0.1'), (b'x-ratelimit-limit-requests', b'5000'), (b'x-ratelimit-limit-tokens', b'2000000'), (b'x-ratelimit-remaining-requests', b'4999'), (b'x-ratelimit-remaining-tokens', b'1999917'), (b'x-ratelimit-reset-requests', b'12ms'), (b'x-ratelimit-reset-tokens', b'2ms'), (b'x-request-id', b'req_3e2de79a6208451d8773db0615ce6912'), (b'set-cookie', b'__cf_bm=cwEGjW2GI_IsFfBi2b5FTlEbgBQHXSwygpvIveCOe_g-1792017735.1061804-1.0.1.1-qyHMZfbU5lFtC61bBzy_23al1AfyLTlKxomGkIfN0DCanHG6MrQZEfuYt9LuLT8N0JDMRBm7cVnoW6hIzHNPgYvaoS6kJcZ_tHIuOzm4gdg_Y0VQSAqPPR0QOHJsqHcF; HttpOnly; SameSite=None; Secure; Path=/; Domain=api.openai.com; Expires=Wed, 14 Oct 2026 23:12:17 GMT'), (b'Content-Encoding', b'gzip'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2026-10-14 16:48:07,759 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-14 16:48:07,760 [DEBUG] httpcore.http11: receive_response_body.started request=<Request [b'POST']>
+2026-10-14 16:48:07,764 [DEBUG] httpcore.http11: receive_response_body.complete
+2026-10-14 16:48:07,764 [DEBUG] httpcore.http11: response_closed.started
+2026-10-14 16:48:07,764 [DEBUG] httpcore.http11: response_closed.complete
+2026-10-14 16:48:07,764 [DEBUG] openai._base_client: HTTP Response: POST https://api.openai.com/v1/chat/completions "200 OK" Headers([('date', 'Wed, 14 Oct 2026 22:42:17 GMT'), ('content-type', 'application/json'), ('transfer-encoding', 'chunked'), ('connection', 'keep-alive'), ('cf-ray', 'a4aa189c6d6b644b-GIG'), ('cf-cache-status', 'DYNAMIC'), ('server', 'cloudflare'), ('strict-transport-security', 'max-age=31536000; includeSubDomains; preload'), ('x-content-type-options', 'nosniff'), ('access-control-expose-headers', 'X-Request-ID'), ('access-control-expose-headers', 'CF-Ray'), ('access-control-expose-headers', 'CF-Ray'), ('openai-organization', 'maicon-roger'), ('openai-processing-ms', '1604'), ('openai-project', 'proj_zT2uDrjjynpKS15AtA0hXtN5'), ('openai-version', '2020-10-01'), ('x-openai-proxy-wasm', 'v0.1'), ('x-ratelimit-limit-requests', '5000'), ('x-ratelimit-limit-tokens', '2000000'), ('x-ratelimit-remaining-requests', '4999'), ('x-ratelimit-remaining-tokens', '1999917'), ('x-ratelimit-reset-requests', '12ms'), ('x-ratelimit-reset-tokens', '2ms'), ('x-request-id', 'req_3e2de79a6208451d8773db0615ce6912'), ('set-cookie', '__cf_bm=cwEGjW2GI_IsFfBi2b5FTlEbgBQHXSwygpvIveCOe_g-1792017735.1061804-1.0.1.1-qyHMZfbU5lFtC61bBzy_23al1AfyLTlKxomGkIfN0DCanHG6MrQZEfuYt9LuLT8N0JDMRBm7cVnoW6hIzHNPgYvaoS6kJcZ_tHIuOzm4gdg_Y0VQSAqPPR0QOHJsqHcF; HttpOnly; SameSite=None; Secure; Path=/; Domain=api.openai.com; Expires=Wed, 14 Oct 2026 23:12:17 GMT'), ('content-encoding', 'gzip'), ('alt-svc', 'h3=":443"; ma=86400')])
+2026-10-14 16:48:07,765 [DEBUG] openai._base_client: request_id: req_3e2de79a6208451d8773db0615ce6912
+2026-10-14 16:48:07,798 [INFO] app_ontologia: ✅ Resposta recebida com sucesso da OpenAI.
+2026-10-14 16:48:07,798 [INFO] app_ontologia: 📊 Tokens usados: 225
+2026-10-14 16:48:07,798 [INFO] app_ontologia: 📏 Tamanho do código: 543 caracteres
+2026-10-14 16:48:07,799 [INFO] app_ontologia: 
+================================================================================
+📝 CÓDIGO GERADO PELA OPENAI:
+================================================================================
+```cpp
+#include <OneWire.h>
+#include <DallasTemperature.h>
+
+#define ONE_WIRE_BUS 2 // Pino onde o DS18B20 está conectado
+
+OneWire oneWire(ONE_WIRE_BUS);
+DallasTemperature sensors(&oneWire);
+
+void setup() {
+  Serial.begin(9600);
+  sensors.begin();
+}
+
+void loop() {
+  sensors.requestTemperatures(); 
+  float temperature = sensors.getTempCByIndex(0); // Lê a temperatura do primeiro sensor
+
+  Serial.print("Temperatura: ");
+  Serial.print(temperature);
+  Serial.println(" °C");
+
+  delay(2000); // Aguarda 2 segundos antes da próxima leitura
+}
+```
+================================================================================
+✅ FIM DO CÓDIGO
+
+2026-10-14 16:48:07,804 [INFO] werkzeug: 127.0.0.1 - - [14/Oct/2026 16:48:07] "POST /sensor/DS18B20 HTTP/1.1" 200 -
+2026-10-14 16:48:41,312 [INFO] app_ontologia: Acessando a rota Home (/).
+2026-10-14 16:48:41,313 [INFO] werkzeug: 127.0.0.1 - - [14/Oct/2026 16:48:41] "GET / HTTP/1.1" 200 -
+2026-10-14 16:48:42,741 [INFO] app_ontologia: Rota de visualização por plataforma acionada: Arduino
+2026-10-14 16:48:42,742 [DEBUG] app_ontologia: Sensores encontrados para a plataforma 'Arduino': ['DS18B20', 'HCSR04']
+2026-10-14 16:48:42,747 [INFO] werkzeug: 127.0.0.1 - - [14/Oct/2026 16:48:42] "GET /plataforma/Arduino HTTP/1.1" 200 -
+2026-10-14 16:48:43,568 [INFO] app_ontologia: Rota /sensor/HCSR04 chamada com método: GET
+2026-10-14 16:48:43,568 [DEBUG] app_ontologia: Construindo campos do formulário a partir de 'properties'.
+2026-10-14 16:48:43,569 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasSignalType (Default: Digital, Opções: [Digital])
+2026-10-14 16:48:43,569 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasMeasurementUnit (Default: Centimeter, Opções: [Centimeter])
+2026-10-14 16:48:43,569 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasDetectionAngleUnit (Default: Degree, Opções: [Degree])
+2026-10-14 16:48:43,569 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasTimeUnit (Default: Microsecond, Opções: [Microsecond])
+2026-10-14 16:48:43,569 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasMinValue (Default: 2.0, Opções: [])
+2026-10-14 16:48:43,569 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasMaxValue (Default: 400.0, Opções: [])
+2026-10-14 16:48:43,569 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasResolution (Default: 0.3, Opções: [])
+2026-10-14 16:48:43,569 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasErrorValue (Default: 0, Opções: [])
+2026-10-14 16:48:43,570 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasPowerSupply (Default: 5 V DC, Opções: [])
+2026-10-14 16:48:43,570 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasDetectionAngle (Default: 15.0, Opções: [])
+2026-10-14 16:48:43,570 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasTimeout (Default: 30000, Opções: [])
+2026-10-14 16:48:43,570 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasTriggerPulse (Default: 10, Opções: [])
+2026-10-14 16:48:43,570 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasPlatform (Default: Arduino, Opções: [])
+2026-10-14 16:48:43,570 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasTriggerPin (Default: 7, Opções: [2,4,7,9])
+2026-10-14 16:48:43,570 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasEchoPin (Default: 8, Opções: [3,5,8,10])
+2026-10-14 16:48:43,570 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasSoundSpeed (Default: 0.0343, Opções: [])
+2026-10-14 16:48:43,571 [DEBUG] app_ontologia: Propriedade 'hasDependencies' ignorada: editable=False.
+2026-10-14 16:48:43,571 [DEBUG] app_ontologia: Propriedade 'hasHardwareInitialization' ignorada: tipo é 'object'.
+2026-10-14 16:48:43,571 [DEBUG] app_ontologia: Propriedade 'hasFunctionalInterface' ignorada: editable=False.
+2026-10-14 16:48:43,574 [INFO] werkzeug: 127.0.0.1 - - [14/Oct/2026 16:48:43] "GET /sensor/HCSR04 HTTP/1.1" 200 -
+2026-10-14 16:48:46,392 [INFO] app_ontologia: Rota /sensor/HCSR04 chamada com método: POST
+2026-10-14 16:48:46,392 [DEBUG] app_ontologia: Construindo campos do formulário a partir de 'properties'.
+2026-10-14 16:48:46,392 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasSignalType (Default: Digital, Opções: [Digital])
+2026-10-14 16:48:46,393 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasMeasurementUnit (Default: Centimeter, Opções: [Centimeter])
+2026-10-14 16:48:46,393 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasDetectionAngleUnit (Default: Degree, Opções: [Degree])
+2026-10-14 16:48:46,393 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasTimeUnit (Default: Microsecond, Opções: [Microsecond])
+2026-10-14 16:48:46,393 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasMinValue (Default: 2.0, Opções: [])
+2026-10-14 16:48:46,393 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasMaxValue (Default: 400.0, Opções: [])
+2026-10-14 16:48:46,393 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasResolution (Default: 0.3, Opções: [])
+2026-10-14 16:48:46,393 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasErrorValue (Default: 0, Opções: [])
+2026-10-14 16:48:46,393 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasPowerSupply (Default: 5 V DC, Opções: [])
+2026-10-14 16:48:46,393 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasDetectionAngle (Default: 15.0, Opções: [])
+2026-10-14 16:48:46,394 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasTimeout (Default: 30000, Opções: [])
+2026-10-14 16:48:46,394 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasTriggerPulse (Default: 10, Opções: [])
+2026-10-14 16:48:46,394 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasPlatform (Default: Arduino, Opções: [])
+2026-10-14 16:48:46,394 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasTriggerPin (Default: 7, Opções: [2,4,7,9])
+2026-10-14 16:48:46,394 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasEchoPin (Default: 8, Opções: [3,5,8,10])
+2026-10-14 16:48:46,394 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasSoundSpeed (Default: 0.0343, Opções: [])
+2026-10-14 16:48:46,395 [DEBUG] app_ontologia: Propriedade 'hasDependencies' ignorada: editable=False.
+2026-10-14 16:48:46,395 [DEBUG] app_ontologia: Propriedade 'hasHardwareInitialization' ignorada: tipo é 'object'.
+2026-10-14 16:48:46,395 [DEBUG] app_ontologia: Propriedade 'hasFunctionalInterface' ignorada: editable=False.
+2026-10-14 16:48:46,396 [INFO] app_ontologia: Coletando respostas enviadas pelo formulário HTTP POST.
+2026-10-14 16:48:46,396 [DEBUG] app_ontologia: Resposta capturada -> hasSignalType: Digital
+2026-10-14 16:48:46,396 [DEBUG] app_ontologia: Resposta capturada -> hasMeasurementUnit: Centimeter
+2026-10-14 16:48:46,396 [DEBUG] app_ontologia: Resposta capturada -> hasDetectionAngleUnit: Degree
+2026-10-14 16:48:46,396 [DEBUG] app_ontologia: Resposta capturada -> hasTimeUnit: Microsecond
+2026-10-14 16:48:46,396 [DEBUG] app_ontologia: Resposta capturada -> hasMinValue: 2.0
+2026-10-14 16:48:46,396 [DEBUG] app_ontologia: Resposta capturada -> hasMaxValue: 400.0
+2026-10-14 16:48:46,396 [DEBUG] app_ontologia: Resposta capturada -> hasResolution: 0.3
+2026-10-14 16:48:46,396 [DEBUG] app_ontologia: Resposta capturada -> hasErrorValue: 0
+2026-10-14 16:48:46,396 [DEBUG] app_ontologia: Resposta capturada -> hasPowerSupply: 5 V DC
+2026-10-14 16:48:46,396 [DEBUG] app_ontologia: Resposta capturada -> hasDetectionAngle: 15.0
+2026-10-14 16:48:46,396 [DEBUG] app_ontologia: Resposta capturada -> hasTimeout: 30000
+2026-10-14 16:48:46,397 [DEBUG] app_ontologia: Resposta capturada -> hasTriggerPulse: 10
+2026-10-14 16:48:46,397 [DEBUG] app_ontologia: Resposta capturada -> hasPlatform: Arduino
+2026-10-14 16:48:46,397 [DEBUG] app_ontologia: Resposta capturada -> hasTriggerPin: 2
+2026-10-14 16:48:46,397 [DEBUG] app_ontologia: Resposta capturada -> hasEchoPin: 3
+2026-10-14 16:48:46,397 [DEBUG] app_ontologia: Resposta capturada -> hasSoundSpeed: 0.0343
+2026-10-14 16:48:46,397 [DEBUG] app_ontologia: Resposta capturada -> hasTestMode: Sensor Físico
+2026-10-14 16:48:46,397 [INFO] app_ontologia: ================ CONSTRUINDO PROMPT ================
+2026-10-14 16:48:46,397 [INFO] app_ontologia: Sensor: HCSR04
+2026-10-14 16:48:46,397 [INFO] app_ontologia: Modo de teste: Sensor Físico
+2026-10-14 16:48:46,398 [INFO] app_ontologia: 📏 Tamanho do prompt: 163 caracteres
+2026-10-14 16:48:46,398 [INFO] app_ontologia: 
+================================================================================
+2026-10-14 16:48:46,398 [INFO] app_ontologia: 📝 PROMPT ENVIADO:
+2026-10-14 16:48:46,398 [INFO] app_ontologia: ================================================================================
+2026-10-14 16:48:46,398 [INFO] app_ontologia: Contexto:
+Gerar casos de teste para validar o comportamento do componente físico do sensor HCSR04
+integrado à plataforma alvo.
+
+
+
+Modo de execução: Sensor Físico
+
+
+2026-10-14 16:48:46,398 [INFO] app_ontologia: 
+================================================================================
+2026-10-14 16:48:46,398 [INFO] app_ontologia: 🚀 Chamando a API da OpenAI com o modelo 'gpt-4o-mini'...
+2026-10-14 16:48:46,399 [INFO] app_ontologia: 📏 Tamanho do prompt: 163 caracteres
+2026-10-14 16:48:46,402 [DEBUG] openai._base_client: Request options: {'method': 'post', 'url': '/chat/completions', 'timeout': 90, 'files': None, 'idempotency_key': 'stainless-python-retry-6f4f19de-d89a-4c39-b718-f7782f394019', 'security': {'bearer_auth': True}, 'content': None, 'json_data': {'messages': [{'role': 'system', 'content': 'Você é um especialista em C++ e Arduino para IoT. Siga ESTRITAMENTE as instruções do usuário. Gere APENAS o código solicitado, sem explicações.'}, {'role': 'user', 'content': 'Contexto:\nGerar casos de teste para validar o comportamento do componente físico do sensor HCSR04\nintegrado à plataforma alvo.\n\n\n\nModo de execução: Sensor Físico\n\n'}], 'model': 'gpt-4o-mini', 'frequency_penalty': 0.1, 'max_tokens': 3500, 'presence_penalty': 0.1, 'temperature': 0.1, 'top_p': 0.95}}
+2026-10-14 16:48:46,411 [DEBUG] openai._base_client: Sending HTTP Request: POST https://api.openai.com/v1/chat/completions
+2026-10-14 16:48:46,412 [DEBUG] httpcore.connection: close.started
+2026-10-14 16:48:46,412 [DEBUG] httpcore.connection: close.complete
+2026-10-14 16:48:46,413 [DEBUG] httpcore.connection: connect_tcp.started host='api.openai.com' port=443 local_address=None timeout=90 socket_options=None
+2026-10-14 16:48:46,489 [DEBUG] httpcore.connection: connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000021B307EBED0>
+2026-10-14 16:48:46,489 [DEBUG] httpcore.connection: start_tls.started ssl_context=<ssl.SSLContext object at 0x0000021B2FDC6F30> server_hostname='api.openai.com' timeout=90
+2026-10-14 16:48:46,531 [DEBUG] httpcore.connection: start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000021B30080640>
+2026-10-14 16:48:46,532 [DEBUG] httpcore.http11: send_request_headers.started request=<Request [b'POST']>
+2026-10-14 16:48:46,533 [DEBUG] httpcore.http11: send_request_headers.complete
+2026-10-14 16:48:46,533 [DEBUG] httpcore.http11: send_request_body.started request=<Request [b'POST']>
+2026-10-14 16:48:46,533 [DEBUG] httpcore.http11: send_request_body.complete
+2026-10-14 16:48:46,534 [DEBUG] httpcore.http11: receive_response_headers.started request=<Request [b'POST']>
+2026-10-14 16:48:49,772 [DEBUG] httpcore.http11: receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Wed, 14 Oct 2026 22:42:59 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'CF-Ray', b'a4aa199edc1de0e7-GIG'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Server', b'cloudflare'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'X-Content-Type-Options', b'nosniff'), (b'access-control-expose-headers', b'X-Request-ID'), (b'access-control-expose-headers', b'CF-Ray'), (b'Access-Control-Expose-Headers', b'CF-Ray'), (b'openai-organization', b'maicon-roger'), (b'openai-processing-ms', b'2402'), (b'openai-project', b'proj_zT2uDrjjynpKS15AtA0hXtN5'), (b'openai-version', b'2020-10-01'), (b'x-openai-proxy-wasm', b'v0.1'), (b'x-ratelimit-limit-requests', b'5000'), (b'x-ratelimit-limit-tokens', b'2000000'), (b'x-ratelimit-remaining-requests', b'4999'), (b'x-ratelimit-remaining-tokens', b'1999917'), (b'x-ratelimit-reset-requests', b'12ms'), (b'x-ratelimit-reset-tokens', b'2ms'), (b'x-request-id', b'req_243e2b3e6ff145bdb5cf54cd4f93e56e'), (b'Content-Encoding', b'gzip'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2026-10-14 16:48:49,774 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-14 16:48:49,774 [DEBUG] httpcore.http11: receive_response_body.started request=<Request [b'POST']>
+2026-10-14 16:48:49,776 [DEBUG] httpcore.http11: receive_response_body.complete
+2026-10-14 16:48:49,776 [DEBUG] httpcore.http11: response_closed.started
+2026-10-14 16:48:49,777 [DEBUG] httpcore.http11: response_closed.complete
+2026-10-14 16:48:49,777 [DEBUG] openai._base_client: HTTP Response: POST https://api.openai.com/v1/chat/completions "200 OK" Headers([('date', 'Wed, 14 Oct 2026 22:42:59 GMT'), ('content-type', 'application/json'), ('transfer-encoding', 'chunked'), ('connection', 'keep-alive'), ('cf-ray', 'a4aa199edc1de0e7-GIG'), ('cf-cache-status', 'DYNAMIC'), ('server', 'cloudflare'), ('strict-transport-security', 'max-age=31536000; includeSubDomains; preload'), ('x-content-type-options', 'nosniff'), ('access-control-expose-headers', 'X-Request-ID'), ('access-control-expose-headers', 'CF-Ray'), ('access-control-expose-headers', 'CF-Ray'), ('openai-organization', 'maicon-roger'), ('openai-processing-ms', '2402'), ('openai-project', 'proj_zT2uDrjjynpKS15AtA0hXtN5'), ('openai-version', '2020-10-01'), ('x-openai-proxy-wasm', 'v0.1'), ('x-ratelimit-limit-requests', '5000'), ('x-ratelimit-limit-tokens', '2000000'), ('x-ratelimit-remaining-requests', '4999'), ('x-ratelimit-remaining-tokens', '1999917'), ('x-ratelimit-reset-requests', '12ms'), ('x-ratelimit-reset-tokens', '2ms'), ('x-request-id', 'req_243e2b3e6ff145bdb5cf54cd4f93e56e'), ('content-encoding', 'gzip'), ('alt-svc', 'h3=":443"; ma=86400')])
+2026-10-14 16:48:49,777 [DEBUG] openai._base_client: request_id: req_243e2b3e6ff145bdb5cf54cd4f93e56e
+2026-10-14 16:48:49,779 [INFO] app_ontologia: ✅ Resposta recebida com sucesso da OpenAI.
+2026-10-14 16:48:49,780 [INFO] app_ontologia: 📊 Tokens usados: 366
+2026-10-14 16:48:49,780 [INFO] app_ontologia: 📏 Tamanho do código: 989 caracteres
+2026-10-14 16:48:49,780 [INFO] app_ontologia: 
+================================================================================
+📝 CÓDIGO GERADO PELA OPENAI:
+================================================================================
+```cpp
+#include <NewPing.h>
+
+#define TRIGGER_PIN  9  // Pino do Trigger do sensor HC-SR04
+#define ECHO_PIN     10 // Pino do Echo do sensor HC-SR04
+#define MAX_DISTANCE 200 // Distância máxima em cm
+
+NewPing sonar(TRIGGER_PIN, ECHO_PIN, MAX_DISTANCE);
+
+void setup() {
+  Serial.begin(9600);
+}
+
+void loop() {
+  delay(50); // Aguarda um pouco entre as leituras
+  unsigned int uS = sonar.ping(); // Envia o pulso e recebe o tempo de retorno
+  float distance = uS / US_ROUNDTRIP_CM; // Converte o tempo em distância
+
+  Serial.print("Distância: ");
+  Serial.print(distance);
+  Serial.println(" cm");
+
+  // Casos de teste
+  if (distance < 10) {
+    Serial.println("Teste 1: Objeto muito próximo.");
+  } else if (distance >= 10 && distance < 50) {
+    Serial.println("Teste 2: Objeto a uma distância média.");
+  } else if (distance >= 50 && distance < 100) {
+    Serial.println("Teste 3: Objeto a uma distância longa.");
+  } else {
+    Serial.println("Teste 4: Objeto fora do alcance.");
+  }
+}
+```
+================================================================================
+✅ FIM DO CÓDIGO
+
+2026-10-14 16:48:49,786 [INFO] werkzeug: 127.0.0.1 - - [14/Oct/2026 16:48:49] "POST /sensor/HCSR04 HTTP/1.1" 200 -

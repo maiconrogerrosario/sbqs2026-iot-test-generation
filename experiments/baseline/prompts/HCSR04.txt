@@ -1,0 +1,4 @@
+Prompt:
+Gerar casos de teste para validar o comportamento do componente físico do sensor HCSR04
+integrado à plataforma alvo.
+  

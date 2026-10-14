@@ -1,0 +1,168 @@
+DS18B20:
+  description: "Sensor de temperatura digital baseado no protocolo OneWire"
+
+  ontologyMapping:
+    classHierarchy:
+      - "owl:Thing"
+      - "DeviceIoT"
+      - "Sensor"
+      - "TemperatureSensor"
+      - "DS18B20"
+    objectProperties:
+      hasSignalType: "DigitalSignal"
+      usesLibrary: ["DallasTemperature", "OneWire"]
+      usesProtocol: "OneWire"
+      useTestLibrary: "AUnit"
+      measuresQuantity: "Temperature"
+      hasMeasurementUnit: "TemperatureUnit"
+      hasMicrocontroller: "ArduinoUno"
+    dataProperties:
+      hasErrorValue: -127.0
+      hasResolution: 0.0625
+      hasMinValue: -55.0
+      hasMaxValue: 125.0
+
+  properties:
+    hasSignalType:
+      type: string
+      description: "Tipo lógico do sinal do sensor."
+      allowedValues:
+        - Digital
+      value: "Digital"
+
+    hasMeasurementUnit:
+      type: string
+      description: "Unidade concreta utilizada para leitura da temperatura."
+      allowedValues:
+        - Celsius
+        - Fahrenheit
+      value: "Celsius"
+
+    hasMinValue:
+      type: number
+      description: "Menor temperatura suportada pelo sensor."
+      value: -55
+
+    hasMaxValue:
+      type: number
+      description: "Maior temperatura suportada pelo sensor."
+      value: 125
+
+    hasResolution:
+      type: number
+      description: "Resolução máxima da leitura em graus Celsius."
+      value: 0.0625
+
+    hasCommunicationProtocol:
+      type: string
+      description: "Protocolo de comunicação utilizado pelo sensor."
+      value: "1-Wire"
+
+    hasPlatform:
+      type: string
+      description: "Plataforma de execução selecionada."
+      value: "Arduino"
+
+    hasPowerSupply:
+      type: string
+      description: "Faixa de tensão de alimentação do sensor."
+      value: "3.0V - 5.5V"
+
+    hasErrorValue:
+      type: number
+      description: "Valor retornado quando o sensor está desconectado ou apresenta erro."
+      value: -127.0
+
+    hasStableReadingThreshold:
+      type: number
+      description: "Variação máxima permitida entre leituras estáveis."
+      value: 0.5
+
+    hasStableReadingDuration:
+      type: number
+      description: "Quantidade de leituras utilizada no teste de estabilidade."
+      value: 5
+
+    hasPins:
+      type: integer
+      description: "Pino digital utilizado para comunicação 1-Wire."
+      allowedValues:
+        - 2
+        - 10
+      value: 2
+
+    hasDependencies:
+      type: object
+      editable: false
+      value:
+        productionLibraries:
+          - name: "OneWire"
+          - name: "DallasTemperature"
+        testingLibraries:
+          - name: "AUnit"
+
+    hasHardwareInitialization:
+      type: object
+      description: "Inicialização estrutural de hardware (sem setup/loop)"
+      value:
+        constants:
+          - name: "DATA_PIN"
+            type: macro
+            value: 2
+        objects:
+          - name: "oneWire"
+            class: "OneWire"
+            constructor:
+              - "DATA_PIN"
+          - name: "sensors"
+            class: "DallasTemperature"
+            constructor:
+              - "&oneWire"
+
+    hasFunctionalInterface:
+      type: object
+      editable: false
+      value:
+        methods:
+          - name: "requestTemperatures"
+            returns: void
+          - name: "getTempCByIndex"
+            parameters:
+              - name: index
+                type: int
+            returns: float
+
+  # ============================================================
+  # CORREÇÃO REAL: Alinhados estritamente na raiz (2 espaços)
+  # ============================================================
+  testConfiguration:
+    testSuite: "DS18B20_AutomatedTests"
+    testFramework: "AUnit"
+    mockSupport:
+      enabled: true
+
+    generationScope:
+      generateOnly:
+        - hardware_constants
+        - hardware_objects
+        - test_blocks
+      forbid:
+        - setup_function
+        - loop_function
+        - runner_invocation
+
+    generationPolicy:
+      assertionMapping:
+        true: { kind: macro, name: assertTrue, namespace: none }
+        false: { kind: macro, name: assertFalse, namespace: none }
+        equals: { kind: macro, name: assertEqual, namespace: none }
+        near: { kind: macro, name: assertNear, namespace: none }
+
+  forbiddenCodePatterns:
+    - "class .*"
+    - "override"
+    - "setup\\s*\\("
+    - "loop\\s*\\("
+    - "TestRunner"
+    - "begin\\s*\\("
+    - "aunit::assert"

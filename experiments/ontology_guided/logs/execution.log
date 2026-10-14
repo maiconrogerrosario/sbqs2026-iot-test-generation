@@ -1,0 +1,476 @@
+C:\Users\maico\AppData\Local\Programs\Python\Python313\python.exe C:\Projetos\Dissertação\iot-test-generation\app.py 
+2026-10-14 16:50:15,611 [INFO] app_ontologia: Buscando arquivos de ontologia na pasta: ./ontologias/
+2026-10-14 16:50:15,611 [INFO] app_ontologia: Arquivos encontrados: ['./ontologias\\DS18B20.yml', './ontologias\\HCSR04.yml']
+2026-10-14 16:50:15,632 [INFO] app_ontologia: Ontologia 'DS18B20' carregada com sucesso do arquivo: DS18B20.yml
+2026-10-14 16:50:15,662 [INFO] app_ontologia: Ontologia 'HCSR04' carregada com sucesso do arquivo: HCSR04.yml
+2026-10-14 16:50:15,662 [INFO] app_ontologia: Total de ontologias em memória: ['DS18B20', 'HCSR04']
+2026-10-14 16:50:15,665 [INFO] app_ontologia: Iniciando o servidor Flask de Ontologia IoT...
+ * Serving Flask app 'app'
+ * Debug mode: on
+2026-10-14 16:50:15,719 [INFO] werkzeug: WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5000
+2026-10-14 16:50:15,720 [INFO] werkzeug: Press CTRL+C to quit
+2026-10-14 16:50:15,722 [INFO] werkzeug:  * Restarting with stat
+2026-10-14 16:50:20,923 [INFO] app_ontologia: Buscando arquivos de ontologia na pasta: ./ontologias/
+2026-10-14 16:50:20,924 [INFO] app_ontologia: Arquivos encontrados: ['./ontologias\\DS18B20.yml', './ontologias\\HCSR04.yml']
+2026-10-14 16:50:20,959 [INFO] app_ontologia: Ontologia 'DS18B20' carregada com sucesso do arquivo: DS18B20.yml
+2026-10-14 16:50:21,001 [INFO] app_ontologia: Ontologia 'HCSR04' carregada com sucesso do arquivo: HCSR04.yml
+2026-10-14 16:50:21,002 [INFO] app_ontologia: Total de ontologias em memória: ['DS18B20', 'HCSR04']
+2026-10-14 16:50:21,005 [INFO] app_ontologia: Iniciando o servidor Flask de Ontologia IoT...
+2026-10-14 16:50:21,055 [WARNING] werkzeug:  * Debugger is active!
+2026-10-14 16:50:21,061 [INFO] werkzeug:  * Debugger PIN: 121-209-052
+2026-10-14 16:50:21,093 [INFO] app_ontologia: Acessando a rota Home (/).
+2026-10-14 16:50:21,111 [INFO] werkzeug: 127.0.0.1 - - [14/Oct/2026 16:50:21] "GET / HTTP/1.1" 200 -
+2026-10-14 16:50:22,351 [INFO] app_ontologia: Rota de visualização por plataforma acionada: Arduino
+2026-10-14 16:50:22,351 [DEBUG] app_ontologia: Sensores encontrados para a plataforma 'Arduino': ['DS18B20', 'HCSR04']
+2026-10-14 16:50:22,357 [INFO] werkzeug: 127.0.0.1 - - [14/Oct/2026 16:50:22] "GET /plataforma/Arduino HTTP/1.1" 200 -
+2026-10-14 16:50:23,204 [INFO] app_ontologia: Rota /sensor/DS18B20 chamada com método: GET
+2026-10-14 16:50:23,204 [DEBUG] app_ontologia: Construindo campos do formulário a partir de 'properties'.
+2026-10-14 16:50:23,204 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasSignalType (Default: Digital, Opções: [Digital])
+2026-10-14 16:50:23,204 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasMeasurementUnit (Default: Celsius, Opções: [Celsius,Fahrenheit])
+2026-10-14 16:50:23,204 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasMinValue (Default: -55, Opções: [])
+2026-10-14 16:50:23,204 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasMaxValue (Default: 125, Opções: [])
+2026-10-14 16:50:23,204 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasResolution (Default: 0.0625, Opções: [])
+2026-10-14 16:50:23,204 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasCommunicationProtocol (Default: 1-Wire, Opções: [])
+2026-10-14 16:50:23,204 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasPlatform (Default: Arduino, Opções: [])
+2026-10-14 16:50:23,205 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasPowerSupply (Default: 3.0V - 5.5V, Opções: [])
+2026-10-14 16:50:23,205 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasErrorValue (Default: -127.0, Opções: [])
+2026-10-14 16:50:23,205 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasStableReadingThreshold (Default: 0.5, Opções: [])
+2026-10-14 16:50:23,205 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasStableReadingDuration (Default: 5, Opções: [])
+2026-10-14 16:50:23,205 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasPins (Default: 2, Opções: [2,10])
+2026-10-14 16:50:23,205 [DEBUG] app_ontologia: Propriedade 'hasDependencies' ignorada: editable=False.
+2026-10-14 16:50:23,205 [DEBUG] app_ontologia: Propriedade 'hasHardwareInitialization' ignorada: tipo é 'object'.
+2026-10-14 16:50:23,205 [DEBUG] app_ontologia: Propriedade 'hasFunctionalInterface' ignorada: editable=False.
+2026-10-14 16:50:23,218 [INFO] werkzeug: 127.0.0.1 - - [14/Oct/2026 16:50:23] "GET /sensor/DS18B20 HTTP/1.1" 200 -
+2026-10-14 16:50:27,275 [INFO] app_ontologia: Rota /sensor/DS18B20 chamada com método: POST
+2026-10-14 16:50:27,275 [DEBUG] app_ontologia: Construindo campos do formulário a partir de 'properties'.
+2026-10-14 16:50:27,275 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasSignalType (Default: Digital, Opções: [Digital])
+2026-10-14 16:50:27,275 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasMeasurementUnit (Default: Celsius, Opções: [Celsius,Fahrenheit])
+2026-10-14 16:50:27,275 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasMinValue (Default: -55, Opções: [])
+2026-10-14 16:50:27,275 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasMaxValue (Default: 125, Opções: [])
+2026-10-14 16:50:27,275 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasResolution (Default: 0.0625, Opções: [])
+2026-10-14 16:50:27,275 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasCommunicationProtocol (Default: 1-Wire, Opções: [])
+2026-10-14 16:50:27,275 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasPlatform (Default: Arduino, Opções: [])
+2026-10-14 16:50:27,275 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasPowerSupply (Default: 3.0V - 5.5V, Opções: [])
+2026-10-14 16:50:27,275 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasErrorValue (Default: -127.0, Opções: [])
+2026-10-14 16:50:27,275 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasStableReadingThreshold (Default: 0.5, Opções: [])
+2026-10-14 16:50:27,275 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasStableReadingDuration (Default: 5, Opções: [])
+2026-10-14 16:50:27,276 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasPins (Default: 2, Opções: [2,10])
+2026-10-14 16:50:27,276 [DEBUG] app_ontologia: Propriedade 'hasDependencies' ignorada: editable=False.
+2026-10-14 16:50:27,276 [DEBUG] app_ontologia: Propriedade 'hasHardwareInitialization' ignorada: tipo é 'object'.
+2026-10-14 16:50:27,276 [DEBUG] app_ontologia: Propriedade 'hasFunctionalInterface' ignorada: editable=False.
+2026-10-14 16:50:27,282 [INFO] app_ontologia: Coletando respostas enviadas pelo formulário HTTP POST.
+2026-10-14 16:50:27,282 [DEBUG] app_ontologia: Resposta capturada -> hasSignalType: Digital
+2026-10-14 16:50:27,282 [DEBUG] app_ontologia: Resposta capturada -> hasMeasurementUnit: Celsius
+2026-10-14 16:50:27,283 [DEBUG] app_ontologia: Resposta capturada -> hasMinValue: -55
+2026-10-14 16:50:27,283 [DEBUG] app_ontologia: Resposta capturada -> hasMaxValue: 125
+2026-10-14 16:50:27,283 [DEBUG] app_ontologia: Resposta capturada -> hasResolution: 0.0625
+2026-10-14 16:50:27,283 [DEBUG] app_ontologia: Resposta capturada -> hasCommunicationProtocol: 1-Wire
+2026-10-14 16:50:27,283 [DEBUG] app_ontologia: Resposta capturada -> hasPlatform: Arduino
+2026-10-14 16:50:27,283 [DEBUG] app_ontologia: Resposta capturada -> hasPowerSupply: 3.0V - 5.5V
+2026-10-14 16:50:27,283 [DEBUG] app_ontologia: Resposta capturada -> hasErrorValue: -127.0
+2026-10-14 16:50:27,283 [DEBUG] app_ontologia: Resposta capturada -> hasStableReadingThreshold: 0.5
+2026-10-14 16:50:27,283 [DEBUG] app_ontologia: Resposta capturada -> hasStableReadingDuration: 5
+2026-10-14 16:50:27,283 [DEBUG] app_ontologia: Resposta capturada -> hasPins: 2
+2026-10-14 16:50:27,283 [DEBUG] app_ontologia: Resposta capturada -> hasTestMode: Sensor Físico
+2026-10-14 16:50:27,283 [INFO] app_ontologia: ================ CONSTRUINDO PROMPT ================
+2026-10-14 16:50:27,283 [INFO] app_ontologia: Sensor: DS18B20
+2026-10-14 16:50:27,283 [INFO] app_ontologia: Modo de teste: Sensor Físico
+2026-10-14 16:50:27,283 [INFO] app_ontologia: 📏 Tamanho do prompt: 6385 caracteres
+2026-10-14 16:50:27,284 [INFO] app_ontologia: 
+================================================================================
+2026-10-14 16:50:27,284 [INFO] app_ontologia: 📝 PROMPT ENVIADO:
+2026-10-14 16:50:27,284 [INFO] app_ontologia: ================================================================================
+2026-10-14 16:50:27,284 [INFO] app_ontologia: 
+Contexto:
+Gerar casos de teste para validar o comportamento do componente físico do sensor DS18B20
+integrado à plataforma alvo.
+
+Parâmetros selecionados pelo usuário:
+- hasSignalType: Digital
+- hasMeasurementUnit: Celsius
+- hasMinValue: -55
+- hasMaxValue: 125
+- hasResolution: 0.0625
+- hasCommunicationProtocol: 1-Wire
+- hasPlatform: Arduino
+- hasPowerSupply: 3.0V - 5.5V
+- hasErrorValue: -127.0
+- hasStableReadingThreshold: 0.5
+- hasStableReadingDuration: 5
+- hasPins: 2
+- hasTestMode: Sensor Físico
+
+Modo de execução: Sensor Físico
+
+INSTRUÇÕES OBRIGATÓRIAS:
+1. C++/Arduino compilável
+2. Testes da ontologia
+3-8. Use: classHierarchy, objectProperties, dataProperties, properties, hasFunctionalInterface, hasHardwareInitialization
+9. Framework = testConfiguration
+10. Evite forbiddenCodePatterns
+11. Compatível com testConfiguration
+12. Comentários de rastreabilidade
+13. Não invente nada
+14. Valide comportamento físico
+15-17. Respeite modo: Sensor Físico | Mock | Ambos
+18. Apenas código, sem explicações
+
+Ontologia (fonte única da verdade):
+{
+  "description": "Sensor de temperatura digital baseado no protocolo OneWire",
+  "ontologyMapping": {
+    "classHierarchy": [
+      "owl:Thing",
+      "DeviceIoT",
+      "Sensor",
+      "TemperatureSensor",
+      "DS18B20"
+    ],
+    "objectProperties": {
+      "hasSignalType": "DigitalSignal",
+      "usesLibrary": [
+        "DallasTemperature",
+        "OneWire"
+      ],
+      "usesProtocol": "OneWire",
+      "useTestLibrary": "AUnit",
+      "measuresQuantity": "Temperature",
+      "hasMeasurementUnit": "TemperatureUnit",
+      "hasMicrocontroller": "ArduinoUno"
+    },
+    "dataProperties": {
+      "hasErrorValue": -127.0,
+      "hasResolution": 0.0625,
+      "hasMinValue": -55.0,
+      "hasMaxValue": 125.0
+    }
+  },
+  "properties": {
+    "hasSignalType": {
+      "type": "string",
+      "description": "Tipo lógico do sinal do sensor.",
+      "allowedValues": [
+        "Digital"
+      ],
+      "value": "Digital"
+    },
+    "hasMeasurementU...
+2026-10-14 16:50:27,287 [INFO] app_ontologia: 
+================================================================================
+2026-10-14 16:50:27,287 [INFO] app_ontologia: 🚀 Chamando a API da OpenAI com o modelo 'gpt-4o-mini'...
+2026-10-14 16:50:27,287 [INFO] app_ontologia: 📏 Tamanho do prompt: 6385 caracteres
+2026-10-14 16:50:28,711 [DEBUG] openai._base_client: Request options: {'method': 'post', 'url': '/chat/completions', 'timeout': 90, 'files': None, 'idempotency_key': 'stainless-python-retry-1b048ec5-cb3b-4e90-b8fa-68aeead88507', 'security': {'bearer_auth': True}, 'content': None, 'json_data': {'messages': [{'role': 'system', 'content': 'Você é um especialista em C++ e Arduino para IoT. Siga ESTRITAMENTE as instruções do usuário. Gere APENAS o código solicitado, sem explicações.'}, {'role': 'user', 'content': 'Contexto:\nGerar casos de teste para validar o comportamento do componente físico do sensor DS18B20\nintegrado à plataforma alvo.\n\nParâmetros selecionados pelo usuário:\n- hasSignalType: Digital\n- hasMeasurementUnit: Celsius\n- hasMinValue: -55\n- hasMaxValue: 125\n- hasResolution: 0.0625\n- hasCommunicationProtocol: 1-Wire\n- hasPlatform: Arduino\n- hasPowerSupply: 3.0V - 5.5V\n- hasErrorValue: -127.0\n- hasStableReadingThreshold: 0.5\n- hasStableReadingDuration: 5\n- hasPins: 2\n- hasTestMode: Sensor Físico\n\nModo de execução: Sensor Físico\n\nINSTRUÇÕES OBRIGATÓRIAS:\n1. C++/Arduino compilável\n2. Testes da ontologia\n3-8. Use: classHierarchy, objectProperties, dataProperties, properties, hasFunctionalInterface, hasHardwareInitialization\n9. Framework = testConfiguration\n10. Evite forbiddenCodePatterns\n11. Compatível com testConfiguration\n12. Comentários de rastreabilidade\n13. Não invente nada\n14. Valide comportamento físico\n15-17. Respeite modo: Sensor Físico | Mock | Ambos\n18. Apenas código, sem explicações\n\nOntologia (fonte única da verdade):\n{\n  "description": "Sensor de temperatura digital baseado no protocolo OneWire",\n  "ontologyMapping": {\n    "classHierarchy": [\n      "owl:Thing",\n      "DeviceIoT",\n      "Sensor",\n      "TemperatureSensor",\n      "DS18B20"\n    ],\n    "objectProperties": {\n      "hasSignalType": "DigitalSignal",\n      "usesLibrary": [\n        "DallasTemperature",\n        "OneWire"\n      ],\n      "usesProtocol": "OneWire",\n      "useTestLibrary": "AUnit",\n      "measuresQuantity": "Temperature",\n      "hasMeasurementUnit": "TemperatureUnit",\n      "hasMicrocontroller": "ArduinoUno"\n    },\n    "dataProperties": {\n      "hasErrorValue": -127.0,\n      "hasResolution": 0.0625,\n      "hasMinValue": -55.0,\n      "hasMaxValue": 125.0\n    }\n  },\n  "properties": {\n    "hasSignalType": {\n      "type": "string",\n      "description": "Tipo lógico do sinal do sensor.",\n      "allowedValues": [\n        "Digital"\n      ],\n      "value": "Digital"\n    },\n    "hasMeasurementUnit": {\n      "type": "string",\n      "description": "Unidade concreta utilizada para leitura da temperatura.",\n      "allowedValues": [\n        "Celsius",\n        "Fahrenheit"\n      ],\n      "value": "Celsius"\n    },\n    "hasMinValue": {\n      "type": "number",\n      "description": "Menor temperatura suportada pelo sensor.",\n      "value": -55\n    },\n    "hasMaxValue": {\n      "type": "number",\n      "description": "Maior temperatura suportada pelo sensor.",\n      "value": 125\n    },\n    "hasResolution": {\n      "type": "number",\n      "description": "Resolução máxima da leitura em graus Celsius.",\n      "value": 0.0625\n    },\n    "hasCommunicationProtocol": {\n      "type": "string",\n      "description": "Protocolo de comunicação utilizado pelo sensor.",\n      "value": "1-Wire"\n    },\n    "hasPlatform": {\n      "type": "string",\n      "description": "Plataforma de execução selecionada.",\n      "value": "Arduino"\n    },\n    "hasPowerSupply": {\n      "type": "string",\n      "description": "Faixa de tensão de alimentação do sensor.",\n      "value": "3.0V - 5.5V"\n    },\n    "hasErrorValue": {\n      "type": "number",\n      "description": "Valor retornado quando o sensor está desconectado ou apresenta erro.",\n      "value": -127.0\n    },\n    "hasStableReadingThreshold": {\n      "type": "number",\n      "description": "Variação máxima permitida entre leituras estáveis.",\n      "value": 0.5\n    },\n    "hasStableReadingDuration": {\n      "type": "number",\n      "description": "Quantidade de leituras utilizada no teste de estabilidade.",\n      "value": 5\n    },\n    "hasPins": {\n      "type": "integer",\n      "description": "Pino digital utilizado para comunicação 1-Wire.",\n      "allowedValues": [\n        2,\n        10\n      ],\n      "value": 2\n    },\n    "hasDependencies": {\n      "type": "object",\n      "editable": false,\n      "value": {\n        "productionLibraries": [\n          {\n            "name": "OneWire"\n          },\n          {\n            "name": "DallasTemperature"\n          }\n        ],\n        "testingLibraries": [\n          {\n            "name": "AUnit"\n          }\n        ]\n      }\n    },\n    "hasHardwareInitialization": {\n      "type": "object",\n      "description": "Inicialização estrutural de hardware (sem setup/loop)",\n      "value": {\n        "constants": [\n          {\n            "name": "DATA_PIN",\n            "type": "macro",\n            "value": 2\n          }\n        ],\n        "objects": [\n          {\n            "name": "oneWire",\n            "class": "OneWire",\n            "constructor": [\n              "DATA_PIN"\n            ]\n          },\n          {\n            "name": "sensors",\n            "class": "DallasTemperature",\n            "constructor": [\n              "&oneWire"\n            ]\n          }\n        ]\n      }\n    },\n    "hasFunctionalInterface": {\n      "type": "object",\n      "editable": false,\n      "value": {\n        "methods": [\n          {\n            "name": "requestTemperatures",\n            "returns": "void"\n          },\n          {\n            "name": "getTempCByIndex",\n            "parameters": [\n              {\n                "name": "index",\n                "type": "int"\n              }\n            ],\n            "returns": "float"\n          }\n        ]\n      }\n    }\n  },\n  "testConfiguration": {\n    "testSuite": "DS18B20_AutomatedTests",\n    "testFramework": "AUnit",\n    "mockSupport": {\n      "enabled": true\n    },\n    "generationScope": {\n      "generateOnly": [\n        "hardware_constants",\n        "hardware_objects",\n        "test_blocks"\n      ],\n      "forbid": [\n        "setup_function",\n        "loop_function",\n        "runner_invocation"\n      ]\n    },\n    "generationPolicy": {\n      "assertionMapping": {\n        "true": {\n          "kind": "macro",\n          "name": "assertTrue",\n          "namespace": "none"\n        },\n        "false": {\n          "kind": "macro",\n          "name": "assertFalse",\n          "namespace": "none"\n        },\n        "equals": {\n          "kind": "macro",\n          "name": "assertEqual",\n          "namespace": "none"\n        },\n        "near": {\n          "kind": "macro",\n          "name": "assertNear",\n          "namespace": "none"\n        }\n      }\n    }\n  },\n  "forbiddenCodePatterns": [\n    "class .*",\n    "override",\n    "setup\\\\s*\\\\(",\n    "loop\\\\s*\\\\(",\n    "TestRunner",\n    "begin\\\\s*\\\\(",\n    "aunit::assert"\n  ]\n}\n'}], 'model': 'gpt-4o-mini', 'frequency_penalty': 0.1, 'max_tokens': 3500, 'presence_penalty': 0.1, 'temperature': 0.1, 'top_p': 0.95}}
+2026-10-14 16:50:28,837 [DEBUG] openai._base_client: Sending HTTP Request: POST https://api.openai.com/v1/chat/completions
+2026-10-14 16:50:28,838 [DEBUG] httpcore.connection: connect_tcp.started host='api.openai.com' port=443 local_address=None timeout=90 socket_options=None
+2026-10-14 16:50:28,901 [DEBUG] httpcore.connection: connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001B784748050>
+2026-10-14 16:50:28,901 [DEBUG] httpcore.connection: start_tls.started ssl_context=<ssl.SSLContext object at 0x000001B783A36F30> server_hostname='api.openai.com' timeout=90
+2026-10-14 16:50:28,944 [DEBUG] httpcore.connection: start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001B78442AD50>
+2026-10-14 16:50:28,944 [DEBUG] httpcore.http11: send_request_headers.started request=<Request [b'POST']>
+2026-10-14 16:50:28,945 [DEBUG] httpcore.http11: send_request_headers.complete
+2026-10-14 16:50:28,945 [DEBUG] httpcore.http11: send_request_body.started request=<Request [b'POST']>
+2026-10-14 16:50:28,946 [DEBUG] httpcore.http11: send_request_body.complete
+2026-10-14 16:50:28,946 [DEBUG] httpcore.http11: receive_response_headers.started request=<Request [b'POST']>
+2026-10-14 16:50:31,455 [DEBUG] httpcore.http11: receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Wed, 14 Oct 2026 22:44:41 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'CF-Ray', b'a4aa1c1efd9a7def-GRU'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Server', b'cloudflare'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'X-Content-Type-Options', b'nosniff'), (b'access-control-expose-headers', b'X-Request-ID'), (b'access-control-expose-headers', b'CF-Ray'), (b'Access-Control-Expose-Headers', b'CF-Ray'), (b'openai-organization', b'maicon-roger'), (b'openai-processing-ms', b'2219'), (b'openai-project', b'proj_zT2uDrjjynpKS15AtA0hXtN5'), (b'openai-version', b'2020-10-01'), (b'x-openai-proxy-wasm', b'v0.1'), (b'x-ratelimit-limit-requests', b'5000'), (b'x-ratelimit-limit-tokens', b'2000000'), (b'x-ratelimit-remaining-requests', b'4999'), (b'x-ratelimit-remaining-tokens', b'1998352'), (b'x-ratelimit-reset-requests', b'12ms'), (b'x-ratelimit-reset-tokens', b'49ms'), (b'x-request-id', b'req_c762f6113a224b09b1953a71e4a5c660'), (b'set-cookie', b'__cf_bm=TxibGqZo5.FdIzFHPwH26ZHPPhCYZe8tagZLd201RTc-1792017878.8791237-1.0.1.1-Uvv.T2KkMyNJr57PJkhIrdfT83el7UKmFKwcMazOUmVYiIQKgK6OBT6jT5N9ez8YNX70SiRxNJnTNmpfcnqOD1mDd7Prx8fTDPKLdM2coR5jUZk887NSvNgsJECTUwC5; HttpOnly; SameSite=None; Secure; Path=/; Domain=api.openai.com; Expires=Wed, 14 Oct 2026 23:14:41 GMT'), (b'Content-Encoding', b'gzip'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2026-10-14 16:50:31,456 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-14 16:50:31,457 [DEBUG] httpcore.http11: receive_response_body.started request=<Request [b'POST']>
+2026-10-14 16:50:31,457 [DEBUG] httpcore.http11: receive_response_body.complete
+2026-10-14 16:50:31,457 [DEBUG] httpcore.http11: response_closed.started
+2026-10-14 16:50:31,457 [DEBUG] httpcore.http11: response_closed.complete
+2026-10-14 16:50:31,457 [DEBUG] openai._base_client: HTTP Response: POST https://api.openai.com/v1/chat/completions "200 OK" Headers([('date', 'Wed, 14 Oct 2026 22:44:41 GMT'), ('content-type', 'application/json'), ('transfer-encoding', 'chunked'), ('connection', 'keep-alive'), ('cf-ray', 'a4aa1c1efd9a7def-GRU'), ('cf-cache-status', 'DYNAMIC'), ('server', 'cloudflare'), ('strict-transport-security', 'max-age=31536000; includeSubDomains; preload'), ('x-content-type-options', 'nosniff'), ('access-control-expose-headers', 'X-Request-ID'), ('access-control-expose-headers', 'CF-Ray'), ('access-control-expose-headers', 'CF-Ray'), ('openai-organization', 'maicon-roger'), ('openai-processing-ms', '2219'), ('openai-project', 'proj_zT2uDrjjynpKS15AtA0hXtN5'), ('openai-version', '2020-10-01'), ('x-openai-proxy-wasm', 'v0.1'), ('x-ratelimit-limit-requests', '5000'), ('x-ratelimit-limit-tokens', '2000000'), ('x-ratelimit-remaining-requests', '4999'), ('x-ratelimit-remaining-tokens', '1998352'), ('x-ratelimit-reset-requests', '12ms'), ('x-ratelimit-reset-tokens', '49ms'), ('x-request-id', 'req_c762f6113a224b09b1953a71e4a5c660'), ('set-cookie', '__cf_bm=TxibGqZo5.FdIzFHPwH26ZHPPhCYZe8tagZLd201RTc-1792017878.8791237-1.0.1.1-Uvv.T2KkMyNJr57PJkhIrdfT83el7UKmFKwcMazOUmVYiIQKgK6OBT6jT5N9ez8YNX70SiRxNJnTNmpfcnqOD1mDd7Prx8fTDPKLdM2coR5jUZk887NSvNgsJECTUwC5; HttpOnly; SameSite=None; Secure; Path=/; Domain=api.openai.com; Expires=Wed, 14 Oct 2026 23:14:41 GMT'), ('content-encoding', 'gzip'), ('alt-svc', 'h3=":443"; ma=86400')])
+2026-10-14 16:50:31,458 [DEBUG] openai._base_client: request_id: req_c762f6113a224b09b1953a71e4a5c660
+2026-10-14 16:50:31,476 [INFO] app_ontologia: ✅ Resposta recebida com sucesso da OpenAI.
+2026-10-14 16:50:31,476 [INFO] app_ontologia: 📊 Tokens usados: 1969
+2026-10-14 16:50:31,477 [INFO] app_ontologia: 📏 Tamanho do código: 1074 caracteres
+2026-10-14 16:50:31,477 [INFO] app_ontologia: 
+================================================================================
+📝 CÓDIGO GERADO PELA OPENAI:
+================================================================================
+```cpp
+#include <OneWire.h>
+#include <DallasTemperature.h>
+#include <AUnit.h>
+
+#define DATA_PIN 2
+
+OneWire oneWire(DATA_PIN);
+DallasTemperature sensors(&oneWire);
+
+test(DS18B20_Initialization) {
+    sensors.begin();
+    assertTrue(sensors.getDeviceCount() > 0);
+}
+
+test(DS18B20_TemperatureRange) {
+    sensors.requestTemperatures();
+    float temperature = sensors.getTempCByIndex(0);
+    assertTrue(temperature >= -55.0 && temperature <= 125.0);
+}
+
+test(DS18B20_ErrorValue) {
+    // Simulate disconnection
+    float temperature = sensors.getTempCByIndex(0);
+    assertEqual(temperature, -127.0);
+}
+
+test(DS18B20_StableReading) {
+    float previousTemperature = sensors.getTempCByIndex(0);
+    delay(5000); // Wait for stable reading duration
+    sensors.requestTemperatures();
+    float currentTemperature = sensors.getTempCByIndex(0);
+    assertNear(currentTemperature, previousTemperature, 0.5);
+}
+
+test(DS18B20_ResolutionCheck) {
+    sensors.requestTemperatures();
+    float temperature = sensors.getTempCByIndex(0);
+    assertTrue(fmod(temperature, 0.0625) == 0);
+}
+```
+================================================================================
+✅ FIM DO CÓDIGO
+
+2026-10-14 16:50:31,480 [INFO] werkzeug: 127.0.0.1 - - [14/Oct/2026 16:50:31] "POST /sensor/DS18B20 HTTP/1.1" 200 -
+2026-10-14 16:51:45,283 [INFO] app_ontologia: Acessando a rota Home (/).
+2026-10-14 16:51:45,284 [INFO] werkzeug: 127.0.0.1 - - [14/Oct/2026 16:51:45] "GET / HTTP/1.1" 200 -
+2026-10-14 16:51:46,374 [INFO] app_ontologia: Rota de visualização por plataforma acionada: Arduino
+2026-10-14 16:51:46,374 [DEBUG] app_ontologia: Sensores encontrados para a plataforma 'Arduino': ['DS18B20', 'HCSR04']
+2026-10-14 16:51:46,376 [INFO] werkzeug: 127.0.0.1 - - [14/Oct/2026 16:51:46] "GET /plataforma/Arduino HTTP/1.1" 200 -
+2026-10-14 16:51:47,412 [INFO] app_ontologia: Rota /sensor/HCSR04 chamada com método: GET
+2026-10-14 16:51:47,412 [DEBUG] app_ontologia: Construindo campos do formulário a partir de 'properties'.
+2026-10-14 16:51:47,412 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasSignalType (Default: Digital, Opções: [Digital])
+2026-10-14 16:51:47,412 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasMeasurementUnit (Default: Centimeter, Opções: [Centimeter])
+2026-10-14 16:51:47,412 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasDetectionAngleUnit (Default: Degree, Opções: [Degree])
+2026-10-14 16:51:47,412 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasTimeUnit (Default: Microsecond, Opções: [Microsecond])
+2026-10-14 16:51:47,413 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasMinValue (Default: 2.0, Opções: [])
+2026-10-14 16:51:47,413 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasMaxValue (Default: 400.0, Opções: [])
+2026-10-14 16:51:47,413 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasResolution (Default: 0.3, Opções: [])
+2026-10-14 16:51:47,413 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasErrorValue (Default: 0, Opções: [])
+2026-10-14 16:51:47,413 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasPowerSupply (Default: 5 V DC, Opções: [])
+2026-10-14 16:51:47,413 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasDetectionAngle (Default: 15.0, Opções: [])
+2026-10-14 16:51:47,413 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasTimeout (Default: 30000, Opções: [])
+2026-10-14 16:51:47,413 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasTriggerPulse (Default: 10, Opções: [])
+2026-10-14 16:51:47,414 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasPlatform (Default: Arduino, Opções: [])
+2026-10-14 16:51:47,414 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasTriggerPin (Default: 7, Opções: [2,4,7,9])
+2026-10-14 16:51:47,414 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasEchoPin (Default: 8, Opções: [3,5,8,10])
+2026-10-14 16:51:47,414 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasSoundSpeed (Default: 0.0343, Opções: [])
+2026-10-14 16:51:47,414 [DEBUG] app_ontologia: Propriedade 'hasDependencies' ignorada: editable=False.
+2026-10-14 16:51:47,414 [DEBUG] app_ontologia: Propriedade 'hasHardwareInitialization' ignorada: tipo é 'object'.
+2026-10-14 16:51:47,414 [DEBUG] app_ontologia: Propriedade 'hasFunctionalInterface' ignorada: editable=False.
+2026-10-14 16:51:47,418 [INFO] werkzeug: 127.0.0.1 - - [14/Oct/2026 16:51:47] "GET /sensor/HCSR04 HTTP/1.1" 200 -
+2026-10-14 16:51:50,237 [INFO] app_ontologia: Rota /sensor/HCSR04 chamada com método: POST
+2026-10-14 16:51:50,237 [DEBUG] app_ontologia: Construindo campos do formulário a partir de 'properties'.
+2026-10-14 16:51:50,237 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasSignalType (Default: Digital, Opções: [Digital])
+2026-10-14 16:51:50,237 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasMeasurementUnit (Default: Centimeter, Opções: [Centimeter])
+2026-10-14 16:51:50,237 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasDetectionAngleUnit (Default: Degree, Opções: [Degree])
+2026-10-14 16:51:50,237 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasTimeUnit (Default: Microsecond, Opções: [Microsecond])
+2026-10-14 16:51:50,237 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasMinValue (Default: 2.0, Opções: [])
+2026-10-14 16:51:50,238 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasMaxValue (Default: 400.0, Opções: [])
+2026-10-14 16:51:50,238 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasResolution (Default: 0.3, Opções: [])
+2026-10-14 16:51:50,238 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasErrorValue (Default: 0, Opções: [])
+2026-10-14 16:51:50,238 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasPowerSupply (Default: 5 V DC, Opções: [])
+2026-10-14 16:51:50,238 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasDetectionAngle (Default: 15.0, Opções: [])
+2026-10-14 16:51:50,238 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasTimeout (Default: 30000, Opções: [])
+2026-10-14 16:51:50,238 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasTriggerPulse (Default: 10, Opções: [])
+2026-10-14 16:51:50,238 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasPlatform (Default: Arduino, Opções: [])
+2026-10-14 16:51:50,238 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasTriggerPin (Default: 7, Opções: [2,4,7,9])
+2026-10-14 16:51:50,238 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasEchoPin (Default: 8, Opções: [3,5,8,10])
+2026-10-14 16:51:50,238 [DEBUG] app_ontologia: Campo mapeado para o formulário: hasSoundSpeed (Default: 0.0343, Opções: [])
+2026-10-14 16:51:50,238 [DEBUG] app_ontologia: Propriedade 'hasDependencies' ignorada: editable=False.
+2026-10-14 16:51:50,239 [DEBUG] app_ontologia: Propriedade 'hasHardwareInitialization' ignorada: tipo é 'object'.
+2026-10-14 16:51:50,239 [DEBUG] app_ontologia: Propriedade 'hasFunctionalInterface' ignorada: editable=False.
+2026-10-14 16:51:50,239 [INFO] app_ontologia: Coletando respostas enviadas pelo formulário HTTP POST.
+2026-10-14 16:51:50,239 [DEBUG] app_ontologia: Resposta capturada -> hasSignalType: Digital
+2026-10-14 16:51:50,239 [DEBUG] app_ontologia: Resposta capturada -> hasMeasurementUnit: Centimeter
+2026-10-14 16:51:50,239 [DEBUG] app_ontologia: Resposta capturada -> hasDetectionAngleUnit: Degree
+2026-10-14 16:51:50,240 [DEBUG] app_ontologia: Resposta capturada -> hasTimeUnit: Microsecond
+2026-10-14 16:51:50,240 [DEBUG] app_ontologia: Resposta capturada -> hasMinValue: 2.0
+2026-10-14 16:51:50,240 [DEBUG] app_ontologia: Resposta capturada -> hasMaxValue: 400.0
+2026-10-14 16:51:50,240 [DEBUG] app_ontologia: Resposta capturada -> hasResolution: 0.3
+2026-10-14 16:51:50,240 [DEBUG] app_ontologia: Resposta capturada -> hasErrorValue: 0
+2026-10-14 16:51:50,240 [DEBUG] app_ontologia: Resposta capturada -> hasPowerSupply: 5 V DC
+2026-10-14 16:51:50,240 [DEBUG] app_ontologia: Resposta capturada -> hasDetectionAngle: 15.0
+2026-10-14 16:51:50,240 [DEBUG] app_ontologia: Resposta capturada -> hasTimeout: 30000
+2026-10-14 16:51:50,240 [DEBUG] app_ontologia: Resposta capturada -> hasTriggerPulse: 10
+2026-10-14 16:51:50,240 [DEBUG] app_ontologia: Resposta capturada -> hasPlatform: Arduino
+2026-10-14 16:51:50,240 [DEBUG] app_ontologia: Resposta capturada -> hasTriggerPin: 2
+2026-10-14 16:51:50,240 [DEBUG] app_ontologia: Resposta capturada -> hasEchoPin: 3
+2026-10-14 16:51:50,240 [DEBUG] app_ontologia: Resposta capturada -> hasSoundSpeed: 0.0343
+2026-10-14 16:51:50,243 [DEBUG] app_ontologia: Resposta capturada -> hasTestMode: Sensor Físico
+2026-10-14 16:51:50,243 [INFO] app_ontologia: ================ CONSTRUINDO PROMPT ================
+2026-10-14 16:51:50,243 [INFO] app_ontologia: Sensor: HCSR04
+2026-10-14 16:51:50,244 [INFO] app_ontologia: Modo de teste: Sensor Físico
+2026-10-14 16:51:50,244 [INFO] app_ontologia: 📏 Tamanho do prompt: 9158 caracteres
+2026-10-14 16:51:50,244 [INFO] app_ontologia: 
+================================================================================
+2026-10-14 16:51:50,245 [INFO] app_ontologia: 📝 PROMPT ENVIADO:
+2026-10-14 16:51:50,245 [INFO] app_ontologia: ================================================================================
+2026-10-14 16:51:50,245 [INFO] app_ontologia: 
+Contexto:
+Gerar casos de teste para validar o comportamento do componente físico do sensor HCSR04
+integrado à plataforma alvo.
+
+Parâmetros selecionados pelo usuário:
+- hasSignalType: Digital
+- hasMeasurementUnit: Centimeter
+- hasDetectionAngleUnit: Degree
+- hasTimeUnit: Microsecond
+- hasMinValue: 2.0
+- hasMaxValue: 400.0
+- hasResolution: 0.3
+- hasErrorValue: 0
+- hasPowerSupply: 5 V DC
+- hasDetectionAngle: 15.0
+- hasTimeout: 30000
+- hasTriggerPulse: 10
+- hasPlatform: Arduino
+- hasTriggerPin: 2
+- hasEchoPin: 3
+- hasSoundSpeed: 0.0343
+- hasTestMode: Sensor Físico
+
+Modo de execução: Sensor Físico
+
+INSTRUÇÕES OBRIGATÓRIAS:
+1. C++/Arduino compilável
+2. Testes da ontologia
+3-8. Use: classHierarchy, objectProperties, dataProperties, properties, hasFunctionalInterface, hasHardwareInitialization
+9. Framework = testConfiguration
+10. Evite forbiddenCodePatterns
+11. Compatível com testConfiguration
+12. Comentários de rastreabilidade
+13. Não invente nada
+14. Valide comportamento físico
+15-17. Respeite modo: Sensor Físico | Mock | Ambos
+18. Apenas código, sem explicações
+
+Ontologia (fonte única da verdade):
+{
+  "description": "Sensor ultrassônico utilizado para medição de distância.",
+  "ontologyMapping": {
+    "classHierarchy": [
+      "owl:Thing",
+      "DeviceIoT",
+      "Sensor",
+      "DistanceSensor",
+      "UltrasonicSensor",
+      "HCSR04"
+    ],
+    "objectProperties": {
+      "hasDetectionAngleUnit": "Degree",
+      "hasMeasurementUnit": "Centimeter",
+      "hasRequiredPin": [
+        "EchoPin",
+        "TriggerPin"
+      ],
+      "hasSignalType": "DigitalSignal",
+      "hasTimeUnit": "Microsecond",
+      "useTestLibrary": "AUnit",
+      "measuresQuantity": "Distance",
+      "hasMicrocontroller": "ArduinoUno"
+    },
+    "dataProperties": {
+      "hasErrorValue": "0",
+      "hasResolution": 0.3,
+      "hasMinValue": 2.0,
+      "hasMaxValue": 400.0,
+      "hasPowerSupply": "5 V DC"
+    }
+  },
+  "properties": {
+    "hasSignalType": {
+      "type": "string",
+      "descripti...
+2026-10-14 16:51:50,245 [INFO] app_ontologia: 
+================================================================================
+2026-10-14 16:51:50,246 [INFO] app_ontologia: 🚀 Chamando a API da OpenAI com o modelo 'gpt-4o-mini'...
+2026-10-14 16:51:50,246 [INFO] app_ontologia: 📏 Tamanho do prompt: 9158 caracteres
+2026-10-14 16:51:50,253 [DEBUG] openai._base_client: Request options: {'method': 'post', 'url': '/chat/completions', 'timeout': 90, 'files': None, 'idempotency_key': 'stainless-python-retry-5c279c5b-afab-426f-ac74-7c811c7ad123', 'security': {'bearer_auth': True}, 'content': None, 'json_data': {'messages': [{'role': 'system', 'content': 'Você é um especialista em C++ e Arduino para IoT. Siga ESTRITAMENTE as instruções do usuário. Gere APENAS o código solicitado, sem explicações.'}, {'role': 'user', 'content': 'Contexto:\nGerar casos de teste para validar o comportamento do componente físico do sensor HCSR04\nintegrado à plataforma alvo.\n\nParâmetros selecionados pelo usuário:\n- hasSignalType: Digital\n- hasMeasurementUnit: Centimeter\n- hasDetectionAngleUnit: Degree\n- hasTimeUnit: Microsecond\n- hasMinValue: 2.0\n- hasMaxValue: 400.0\n- hasResolution: 0.3\n- hasErrorValue: 0\n- hasPowerSupply: 5 V DC\n- hasDetectionAngle: 15.0\n- hasTimeout: 30000\n- hasTriggerPulse: 10\n- hasPlatform: Arduino\n- hasTriggerPin: 2\n- hasEchoPin: 3\n- hasSoundSpeed: 0.0343\n- hasTestMode: Sensor Físico\n\nModo de execução: Sensor Físico\n\nINSTRUÇÕES OBRIGATÓRIAS:\n1. C++/Arduino compilável\n2. Testes da ontologia\n3-8. Use: classHierarchy, objectProperties, dataProperties, properties, hasFunctionalInterface, hasHardwareInitialization\n9. Framework = testConfiguration\n10. Evite forbiddenCodePatterns\n11. Compatível com testConfiguration\n12. Comentários de rastreabilidade\n13. Não invente nada\n14. Valide comportamento físico\n15-17. Respeite modo: Sensor Físico | Mock | Ambos\n18. Apenas código, sem explicações\n\nOntologia (fonte única da verdade):\n{\n  "description": "Sensor ultrassônico utilizado para medição de distância.",\n  "ontologyMapping": {\n    "classHierarchy": [\n      "owl:Thing",\n      "DeviceIoT",\n      "Sensor",\n      "DistanceSensor",\n      "UltrasonicSensor",\n      "HCSR04"\n    ],\n    "objectProperties": {\n      "hasDetectionAngleUnit": "Degree",\n      "hasMeasurementUnit": "Centimeter",\n      "hasRequiredPin": [\n        "EchoPin",\n        "TriggerPin"\n      ],\n      "hasSignalType": "DigitalSignal",\n      "hasTimeUnit": "Microsecond",\n      "useTestLibrary": "AUnit",\n      "measuresQuantity": "Distance",\n      "hasMicrocontroller": "ArduinoUno"\n    },\n    "dataProperties": {\n      "hasErrorValue": "0",\n      "hasResolution": 0.3,\n      "hasMinValue": 2.0,\n      "hasMaxValue": 400.0,\n      "hasPowerSupply": "5 V DC"\n    }\n  },\n  "properties": {\n    "hasSignalType": {\n      "type": "string",\n      "description": "Tipo lógico do sinal utilizado pelo sensor.",\n      "allowedValues": [\n        "Digital"\n      ],\n      "value": "Digital"\n    },\n    "hasMeasurementUnit": {\n      "type": "string",\n      "description": "Unidade concreta utilizada para medição da distância.",\n      "allowedValues": [\n        "Centimeter"\n      ],\n      "value": "Centimeter"\n    },\n    "hasDetectionAngleUnit": {\n      "type": "string",\n      "description": "Unidade utilizada para representar o ângulo de detecção.",\n      "allowedValues": [\n        "Degree"\n      ],\n      "value": "Degree"\n    },\n    "hasTimeUnit": {\n      "type": "string",\n      "description": "Unidade utilizada para medir a duração do pulso ultrassônico.",\n      "allowedValues": [\n        "Microsecond"\n      ],\n      "value": "Microsecond"\n    },\n    "hasMinValue": {\n      "type": "number",\n      "description": "Menor distância suportada pelo sensor, em centímetros.",\n      "value": 2.0\n    },\n    "hasMaxValue": {\n      "type": "number",\n      "description": "Maior distância suportada pelo sensor, em centímetros.",\n      "value": 400.0\n    },\n    "hasResolution": {\n      "type": "number",\n      "description": "Resolução aproximada da medição, em centímetros.",\n      "value": 0.3\n    },\n    "hasErrorValue": {\n      "type": "string",\n      "description": "Valor utilizado para representar ausência de eco ou falha de leitura.",\n      "value": "0"\n    },\n    "hasPowerSupply": {\n      "type": "string",\n      "description": "Tensão de alimentação utilizada pelo sensor.",\n      "value": "5 V DC"\n    },\n    "hasDetectionAngle": {\n      "type": "number",\n      "description": "Ângulo operacional aproximado de detecção, em graus.",\n      "value": 15.0\n    },\n    "hasTimeout": {\n      "type": "integer",\n      "description": "Tempo máximo de espera pelo pulso de eco, em microssegundos.",\n      "value": 30000\n    },\n    "hasTriggerPulse": {\n      "type": "integer",\n      "description": "Duração do pulso aplicado ao pino Trigger, em microssegundos.",\n      "value": 10\n    },\n    "hasPlatform": {\n      "type": "string",\n      "description": "Plataforma de execução selecionada.",\n      "value": "Arduino"\n    },\n    "hasTriggerPin": {\n      "type": "integer",\n      "description": "Pino digital utilizado para emitir o pulso ultrassônico.",\n      "allowedValues": [\n        2,\n        4,\n        7,\n        9\n      ],\n      "value": 7\n    },\n    "hasEchoPin": {\n      "type": "integer",\n      "description": "Pino digital utilizado para receber o pulso de eco.",\n      "allowedValues": [\n        3,\n        5,\n        8,\n        10\n      ],\n      "value": 8\n    },\n    "hasSoundSpeed": {\n      "type": "number",\n      "description": "Velocidade do som utilizada na conversão do tempo em distância, em centímetros por microssegundo.",\n      "value": 0.0343\n    },\n    "hasDependencies": {\n      "type": "object",\n      "editable": false,\n      "value": {\n        "productionLibraries": [\n          {\n            "name": "Arduino"\n          }\n        ],\n        "testingLibraries": [\n          {\n            "name": "AUnit"\n          }\n        ]\n      }\n    },\n    "hasHardwareInitialization": {\n      "type": "object",\n      "description": "Inicialização estrutural do hardware, sem setup ou loop.",\n      "value": {\n        "constants": [\n          {\n            "name": "TRIGGER_PIN",\n            "type": "macro",\n            "value": 7\n          },\n          {\n            "name": "ECHO_PIN",\n            "type": "macro",\n            "value": 8\n          },\n          {\n            "name": "TRIGGER_PULSE_US",\n            "type": "constant",\n            "dataType": "unsigned long",\n            "value": 10\n          },\n          {\n            "name": "ECHO_TIMEOUT_US",\n            "type": "constant",\n            "dataType": "unsigned long",\n            "value": 30000\n          },\n          {\n            "name": "SOUND_SPEED_CM_PER_US",\n            "type": "constant",\n            "dataType": "float",\n            "value": 0.0343\n          }\n        ],\n        "pinModes": [\n          {\n            "pin": "TRIGGER_PIN",\n            "mode": "OUTPUT"\n          },\n          {\n            "pin": "ECHO_PIN",\n            "mode": "INPUT"\n          }\n        ]\n      }\n    },\n    "hasFunctionalInterface": {\n      "type": "object",\n      "editable": false,\n      "value": {\n        "methods": [\n          {\n            "name": "pinMode",\n            "parameters": [\n              {\n                "name": "pin",\n                "type": "uint8_t"\n              },\n              {\n                "name": "mode",\n                "type": "uint8_t"\n              }\n            ],\n            "returns": "void"\n          },\n          {\n            "name": "digitalWrite",\n            "parameters": [\n              {\n                "name": "pin",\n                "type": "uint8_t"\n              },\n              {\n                "name": "value",\n                "type": "uint8_t"\n              }\n            ],\n            "returns": "void"\n          },\n          {\n            "name": "delayMicroseconds",\n            "parameters": [\n              {\n                "name": "duration",\n                "type": "unsigned int"\n              }\n            ],\n            "returns": "void"\n          },\n          {\n            "name": "pulseIn",\n            "parameters": [\n              {\n                "name": "pin",\n                "type": "uint8_t"\n              },\n              {\n                "name": "state",\n                "type": "uint8_t"\n              },\n              {\n                "name": "timeout",\n                "type": "unsigned long"\n              }\n            ],\n            "returns": "unsigned long"\n          },\n          {\n            "name": "calculateDistance",\n            "parameters": [\n              {\n                "name": "duration",\n                "type": "unsigned long"\n              }\n            ],\n            "returns": "float",\n            "expression": "(duration * SOUND_SPEED_CM_PER_US) / 2.0"\n          }\n        ]\n      }\n    }\n  },\n  "testConfiguration": {\n    "testSuite": "HCSR04_AutomatedTests",\n    "testFramework": "AUnit",\n    "mockSupport": {\n      "enabled": true\n    },\n    "generationScope": {\n      "generateOnly": [\n        "hardware_constants",\n        "hardware_functions",\n        "test_blocks"\n      ],\n      "forbid": [\n        "setup_function",\n        "loop_function",\n        "runner_invocation"\n      ]\n    },\n    "generationPolicy": {\n      "assertionMapping": {\n        "true": {\n          "kind": "macro",\n          "name": "assertTrue",\n          "namespace": "none"\n        },\n        "false": {\n          "kind": "macro",\n          "name": "assertFalse",\n          "namespace": "none"\n        },\n        "equals": {\n          "kind": "macro",\n          "name": "assertEqual",\n          "namespace": "none"\n        },\n        "near": {\n          "kind": "macro",\n          "name": "assertNear",\n          "namespace": "none"\n        }\n      }\n    }\n  },\n  "forbiddenCodePatterns": [\n    "class .*",\n    "override",\n    "setup\\\\s*\\\\(",\n    "loop\\\\s*\\\\(",\n    "TestRunner",\n    "begin\\\\s*\\\\(",\n    "aunit::assert"\n  ]\n}\n'}], 'model': 'gpt-4o-mini', 'frequency_penalty': 0.1, 'max_tokens': 3500, 'presence_penalty': 0.1, 'temperature': 0.1, 'top_p': 0.95}}
+2026-10-14 16:51:50,261 [DEBUG] openai._base_client: Sending HTTP Request: POST https://api.openai.com/v1/chat/completions
+2026-10-14 16:51:50,263 [DEBUG] httpcore.connection: close.started
+2026-10-14 16:51:50,264 [DEBUG] httpcore.connection: close.complete
+2026-10-14 16:51:50,264 [DEBUG] httpcore.connection: connect_tcp.started host='api.openai.com' port=443 local_address=None timeout=90 socket_options=None
+2026-10-14 16:51:50,326 [DEBUG] httpcore.connection: connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001B784778050>
+2026-10-14 16:51:50,326 [DEBUG] httpcore.connection: start_tls.started ssl_context=<ssl.SSLContext object at 0x000001B783A36F30> server_hostname='api.openai.com' timeout=90
+2026-10-14 16:51:50,366 [DEBUG] httpcore.connection: start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001B78473CB00>
+2026-10-14 16:51:50,366 [DEBUG] httpcore.http11: send_request_headers.started request=<Request [b'POST']>
+2026-10-14 16:51:50,367 [DEBUG] httpcore.http11: send_request_headers.complete
+2026-10-14 16:51:50,367 [DEBUG] httpcore.http11: send_request_body.started request=<Request [b'POST']>
+2026-10-14 16:51:50,367 [DEBUG] httpcore.http11: send_request_body.complete
+2026-10-14 16:51:50,368 [DEBUG] httpcore.http11: receive_response_headers.started request=<Request [b'POST']>
+2026-10-14 16:51:55,814 [DEBUG] httpcore.http11: receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Wed, 14 Oct 2026 22:46:05 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'CF-Ray', b'a4aa1e1bcdfbdf4b-GIG'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Server', b'cloudflare'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'X-Content-Type-Options', b'nosniff'), (b'access-control-expose-headers', b'X-Request-ID'), (b'access-control-expose-headers', b'CF-Ray'), (b'Access-Control-Expose-Headers', b'CF-Ray'), (b'openai-organization', b'maicon-roger'), (b'openai-processing-ms', b'4553'), (b'openai-project', b'proj_zT2uDrjjynpKS15AtA0hXtN5'), (b'openai-version', b'2020-10-01'), (b'x-openai-proxy-wasm', b'v0.1'), (b'x-ratelimit-limit-requests', b'5000'), (b'x-ratelimit-limit-tokens', b'2000000'), (b'x-ratelimit-remaining-requests', b'4999'), (b'x-ratelimit-remaining-tokens', b'1997654'), (b'x-ratelimit-reset-requests', b'12ms'), (b'x-ratelimit-reset-tokens', b'70ms'), (b'x-request-id', b'req_3d684c8647c24d6596414b5fec38cad4'), (b'Content-Encoding', b'gzip'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2026-10-14 16:51:55,815 [INFO] httpx: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-14 16:51:55,816 [DEBUG] httpcore.http11: receive_response_body.started request=<Request [b'POST']>
+2026-10-14 16:51:55,817 [DEBUG] httpcore.http11: receive_response_body.complete
+2026-10-14 16:51:55,817 [DEBUG] httpcore.http11: response_closed.started
+2026-10-14 16:51:55,818 [DEBUG] httpcore.http11: response_closed.complete
+2026-10-14 16:51:55,818 [DEBUG] openai._base_client: HTTP Response: POST https://api.openai.com/v1/chat/completions "200 OK" Headers([('date', 'Wed, 14 Oct 2026 22:46:05 GMT'), ('content-type', 'application/json'), ('transfer-encoding', 'chunked'), ('connection', 'keep-alive'), ('cf-ray', 'a4aa1e1bcdfbdf4b-GIG'), ('cf-cache-status', 'DYNAMIC'), ('server', 'cloudflare'), ('strict-transport-security', 'max-age=31536000; includeSubDomains; preload'), ('x-content-type-options', 'nosniff'), ('access-control-expose-headers', 'X-Request-ID'), ('access-control-expose-headers', 'CF-Ray'), ('access-control-expose-headers', 'CF-Ray'), ('openai-organization', 'maicon-roger'), ('openai-processing-ms', '4553'), ('openai-project', 'proj_zT2uDrjjynpKS15AtA0hXtN5'), ('openai-version', '2020-10-01'), ('x-openai-proxy-wasm', 'v0.1'), ('x-ratelimit-limit-requests', '5000'), ('x-ratelimit-limit-tokens', '2000000'), ('x-ratelimit-remaining-requests', '4999'), ('x-ratelimit-remaining-tokens', '1997654'), ('x-ratelimit-reset-requests', '12ms'), ('x-ratelimit-reset-tokens', '70ms'), ('x-request-id', 'req_3d684c8647c24d6596414b5fec38cad4'), ('content-encoding', 'gzip'), ('alt-svc', 'h3=":443"; ma=86400')])
+2026-10-14 16:51:55,819 [DEBUG] openai._base_client: request_id: req_3d684c8647c24d6596414b5fec38cad4
+2026-10-14 16:51:55,820 [INFO] app_ontologia: ✅ Resposta recebida com sucesso da OpenAI.
+2026-10-14 16:51:55,821 [INFO] app_ontologia: 📊 Tokens usados: 2726
+2026-10-14 16:51:55,821 [INFO] app_ontologia: 📏 Tamanho do código: 1528 caracteres
+2026-10-14 16:51:55,821 [INFO] app_ontologia: 
+================================================================================
+📝 CÓDIGO GERADO PELA OPENAI:
+================================================================================
+```cpp
+#include <AUnit.h>
+
+#define TRIGGER_PIN 2
+#define ECHO_PIN 3
+#define TRIGGER_PULSE_US 10
+#define ECHO_TIMEOUT_US 30000
+#define SOUND_SPEED_CM_PER_US 0.0343
+
+void initializeHardware() {
+    pinMode(TRIGGER_PIN, OUTPUT);
+    pinMode(ECHO_PIN, INPUT);
+}
+
+unsigned long measureDistance() {
+    digitalWrite(TRIGGER_PIN, HIGH);
+    delayMicroseconds(TRIGGER_PULSE_US);
+    digitalWrite(TRIGGER_PIN, LOW);
+    return pulseIn(ECHO_PIN, HIGH, ECHO_TIMEOUT_US);
+}
+
+float calculateDistance(unsigned long duration) {
+    return (duration * SOUND_SPEED_CM_PER_US) / 2.0;
+}
+
+test(HCSR04_Test, MeasureDistance_ValidRange) {
+    initializeHardware();
+    unsigned long duration = measureDistance();
+    float distance = calculateDistance(duration);
+    
+    assertTrue(distance >= 2.0);
+    assertTrue(distance <= 400.0);
+}
+
+test(HCSR04_Test, MeasureDistance_ZeroEcho) {
+    initializeHardware();
+    digitalWrite(TRIGGER_PIN, LOW); // Simulate no echo
+    unsigned long duration = measureDistance();
+    
+    assertEqual(duration, 0);
+}
+
+test(HCSR04_Test, MeasureDistance_Timeout) {
+    initializeHardware();
+    unsigned long duration = pulseIn(ECHO_PIN, HIGH, ECHO_TIMEOUT_US);
+    
+    assertEqual(duration, 0); // Expecting timeout to return 0
+}
+
+test(HCSR04_Test, MeasureDistance_Resolution) {
+    initializeHardware();
+    unsigned long duration = measureDistance();
+    float distance = calculateDistance(duration);
+    
+    assertNear(distance, round(distance / 0.3) * 0.3, 0.1); // Check if distance is within resolution
+}
+```
+================================================================================
+✅ FIM DO CÓDIGO
+
+2026-10-14 16:51:55,822 [INFO] werkzeug: 127.0.0.1 - - [14/Oct/2026 16:51:55] "POST /sensor/HCSR04 HTTP/1.1" 200 -

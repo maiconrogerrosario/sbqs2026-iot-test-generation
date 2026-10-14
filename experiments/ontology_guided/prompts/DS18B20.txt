@@ -1,0 +1,75 @@
+Prompt:
+
+Gerar casos de teste para validar o comportamento do componente físico do sensor DS18B20
+integrado à plataforma alvo.
+
+Parâmetros selecionados pelo usuário:
+- hasSignalType: Digital
+- hasMeasurementUnit: Celsius
+- hasMinValue: -55
+- hasMaxValue: 125
+- hasResolution: 0.0625
+- hasCommunicationProtocol: 1-Wire
+- hasPlatform: Arduino
+- hasPowerSupply: 3.0V - 5.5V
+- hasErrorValue: -127.0
+- hasStableReadingThreshold: 0.5
+- hasStableReadingDuration: 5
+- hasPins: 2
+- hasTestMode: Sensor Físico
+
+Modo de execução: Sensor Físico
+
+INSTRUÇÕES OBRIGATÓRIAS:
+1. C++/Arduino compilável
+2. Testes da ontologia
+3-8. Use: classHierarchy, objectProperties, dataProperties, properties, hasFunctionalInterface, hasHardwareInitialization
+9. Framework = testConfiguration
+10. Evite forbiddenCodePatterns
+11. Compatível com testConfiguration
+12. Comentários de rastreabilidade
+13. Não invente nada
+14. Valide comportamento físico
+15-17. Respeite modo: Sensor Físico | Mock | Ambos
+18. Apenas código, sem explicações
+
+Ontologia (fonte única da verdade):
+{
+  "description": "Sensor de temperatura digital baseado no protocolo OneWire",
+  "ontologyMapping": {
+    "classHierarchy": [
+      "owl:Thing",
+      "DeviceIoT",
+      "Sensor",
+      "TemperatureSensor",
+      "DS18B20"
+    ],
+    "objectProperties": {
+      "hasSignalType": "DigitalSignal",
+      "usesLibrary": [
+        "DallasTemperature",
+        "OneWire"
+      ],
+      "usesProtocol": "OneWire",
+      "useTestLibrary": "AUnit",
+      "measuresQuantity": "Temperature",
+      "hasMeasurementUnit": "TemperatureUnit",
+      "hasMicrocontroller": "ArduinoUno"
+    },
+    "dataProperties": {
+      "hasErrorValue": -127.0,
+      "hasResolution": 0.0625,
+      "hasMinValue": -55.0,
+      "hasMaxValue": 125.0
+    }
+  },
+  "properties": {
+    "hasSignalType": {
+      "type": "string",
+      "description": "Tipo lógico do sinal do sensor.",
+      "allowedValues": [
+        "Digital"
+      ],
+      "value": "Digital"
+    },
+    "hasMeasurementU...

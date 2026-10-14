@@ -1,0 +1,5 @@
+Prompt: Gerar casos de teste para validar o comportamento do componente físico do sensor DS18B20
+integrado à plataforma alvo.
+
+
+Modo de execução: Sensor Físico

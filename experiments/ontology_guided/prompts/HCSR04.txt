@@ -1,0 +1,75 @@
+Prompt:
+Gerar casos de teste para validar o comportamento do componente físico do sensor HCSR04
+integrado à plataforma alvo.
+
+Parâmetros selecionados pelo usuário:
+- hasSignalType: Digital
+- hasMeasurementUnit: Centimeter
+- hasDetectionAngleUnit: Degree
+- hasTimeUnit: Microsecond
+- hasMinValue: 2.0
+- hasMaxValue: 400.0
+- hasResolution: 0.3
+- hasErrorValue: 0
+- hasPowerSupply: 5 V DC
+- hasDetectionAngle: 15.0
+- hasTimeout: 30000
+- hasTriggerPulse: 10
+- hasPlatform: Arduino
+- hasTriggerPin: 2
+- hasEchoPin: 3
+- hasSoundSpeed: 0.0343
+- hasTestMode: Sensor Físico
+
+Modo de execução: Sensor Físico
+
+INSTRUÇÕES OBRIGATÓRIAS:
+1. C++/Arduino compilável
+2. Testes da ontologia
+3-8. Use: classHierarchy, objectProperties, dataProperties, properties, hasFunctionalInterface, hasHardwareInitialization
+9. Framework = testConfiguration
+10. Evite forbiddenCodePatterns
+11. Compatível com testConfiguration
+12. Comentários de rastreabilidade
+13. Não invente nada
+14. Valide comportamento físico
+15-17. Respeite modo: Sensor Físico | Mock | Ambos
+18. Apenas código, sem explicações
+
+Ontologia (fonte única da verdade):
+{
+  "description": "Sensor ultrassônico utilizado para medição de distância.",
+  "ontologyMapping": {
+    "classHierarchy": [
+      "owl:Thing",
+      "DeviceIoT",
+      "Sensor",
+      "DistanceSensor",
+      "UltrasonicSensor",
+      "HCSR04"
+    ],
+    "objectProperties": {
+      "hasDetectionAngleUnit": "Degree",
+      "hasMeasurementUnit": "Centimeter",
+      "hasRequiredPin": [
+        "EchoPin",
+        "TriggerPin"
+      ],
+      "hasSignalType": "DigitalSignal",
+      "hasTimeUnit": "Microsecond",
+      "useTestLibrary": "AUnit",
+      "measuresQuantity": "Distance",
+      "hasMicrocontroller": "ArduinoUno"
+    },
+    "dataProperties": {
+      "hasErrorValue": "0",
+      "hasResolution": 0.3,
+      "hasMinValue": 2.0,
+      "hasMaxValue": 400.0,
+      "hasPowerSupply": "5 V DC"
+    }
+  },
+  "properties": {
+    "hasSignalType": {
+      "type": "string",
+      "descripti...
