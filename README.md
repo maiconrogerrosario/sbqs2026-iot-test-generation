@@ -1,178 +1,198 @@
 # SBQS 2026 — Geração Automática de Casos de Teste para Dispositivos IoT com Ontologias e LLMs
 
-Este repositório contém a implementação do protótipo e os artefatos experimentais associados ao artigo:
+Este repositório reúne o protótipo e os artefatos experimentais associados ao artigo científico:
 
 **An Ontology- and LLM-Based Approach for Automatic Test Case Generation in IoT Devices**
 
-Aceito no **XXV Simpósio Brasileiro de Qualidade de Software (SBQS 2026)**, realizado em Maringá, Paraná, Brasil.
+Artigo aceito no **XXV Simpósio Brasileiro de Qualidade de Software (SBQS 2026)**, realizado em Maringá, Paraná, Brasil, de 10 a 13 de novembro de 2026.
 
-## 1. Visão Geral
+**Autores:** Maicon Roger do Rosario e André Luís Andrade Menolli.
 
-Este trabalho apresenta uma abordagem para apoiar a geração automática de casos de teste funcionais para a camada de dispositivos da Internet das Coisas (IoT), combinando:
+## 1. Visão geral
 
-- Ontologias leves para representação de conhecimento;
+A pesquisa apresenta uma abordagem para apoiar a geração automática de casos de teste funcionais para a camada de dispositivos da Internet das Coisas (IoT). A proposta combina:
+
+- Ontologias leves para representação do conhecimento;
 - Modelos de linguagem de grande porte (LLMs);
-- Orquestração de prompts utilizando Python e Flask;
-- Geração de código de teste em C++ para a plataforma Arduino;
-- Utilização do framework AUnit para testes automatizados.
+- Aplicações Python e Flask para orquestração de prompts;
+- Geração de código C++ destinado à plataforma Arduino;
+- Framework AUnit como referência para testes automatizados.
 
-A proposta concentra-se na validação da integração e compatibilidade entre o firmware executado em microcontroladores e os componentes físicos conectados, como sensores e atuadores.
+O foco é a validação funcional da integração e compatibilidade entre o firmware executado em microcontroladores e componentes físicos, como sensores.
 
-O conhecimento técnico dos componentes inclui propriedades operacionais, protocolos de comunicação, bibliotecas de software, interfaces funcionais, configurações de hardware e restrições utilizadas na geração de testes.
+O conhecimento técnico considerado abrange propriedades operacionais, protocolos de comunicação, bibliotecas de software, interfaces funcionais, configurações de hardware e restrições de geração de testes.
 
-A ontologia foi inicialmente modelada em OWL utilizando o Protégé. Na implementação experimental apresentada neste repositório, o conhecimento foi organizado em arquivos YAML, utilizados como representação operacional pela aplicação.
+## 2. Organização do repositório
 
-Nesta versão, não são realizadas consultas SPARQL diretamente à ontologia OWL.
+A estrutura proposta para esta versão é:
 
-## 2. Arquitetura da Abordagem
+```text
+sbqs2026-iot-test-generation/
+├── README.md
+├── requirements.txt
+├── .env.example
+├── .gitignore
+├── app_baseline.py
+├── app_ontology_guided.py
+├── modelagem/
+│   └── iot-device-onto.owl
+├── ontologias/
+│   ├── DS18B20.yml
+│   └── HCSR04.yml
+├── templates/
+│   ├── base.html
+│   ├── home.html
+│   ├── plataforma.html
+│   ├── formulario.html
+│   ├── resultado.html
+│   └── index.html
+└── experimentos/
+    ├── README.md
+    ├── sem_ontologia/
+    │   ├── prompts/
+    │   ├── codigos_gerados/
+    │   └── logs/
+    └── com_ontologia/
+        ├── prompts/
+        ├── codigos_gerados/
+        └── logs/
+```
 
-A solução é organizada em quatro camadas principais:
+**Observação:** esta árvore representa a organização pretendida. Antes de publicar esta versão do README, confira se todos os caminhos e arquivos indicados existem de fato no repositório. Diretórios ainda não criados não devem ser apresentados como materiais disponíveis.
 
-**Camada de apresentação:** Interface web responsável pela seleção da plataforma, escolha do sensor, configuração dos parâmetros e visualização do código gerado.
+## 3. Representação do conhecimento
 
-**Camada de representação do conhecimento:** Armazena as descrições estruturadas dos dispositivos IoT, incluindo propriedades, relacionamentos, dependências e restrições.
+### 3.1. Modelagem conceitual em OWL
 
-**Camada de orquestração:** Recupera as informações do componente selecionado, combina os parâmetros informados pelo usuário e constrói o prompt enviado ao LLM.
+A pasta `modelagem/` contém o arquivo `iot-device-onto.owl`, desenvolvido no Protégé.
 
-**Camada de inteligência artificial:** Utiliza o modelo de linguagem para produzir código de teste em C++ destinado à plataforma Arduino.
+A ontologia representa conceitos e relações relevantes para a camada de dispositivos IoT, incluindo:
 
-O fluxo da aplicação é representado por:
+- Dispositivos, sensores e atuadores;
+- Microcontroladores e pinos;
+- Grandezas e unidades de medida;
+- Protocolos de comunicação;
+- Bibliotecas de software e de testes;
+- Características operacionais;
+- Condições de erro.
+
+A versão incluída neste repositório descreve, entre outros elementos, os sensores DS18B20 e HC-SR04 e instâncias com parâmetros técnicos associados.
+
+### 3.2. Representação operacional em YAML
+
+A pasta `ontologias/` contém os arquivos `DS18B20.yml` e `HCSR04.yml`.
+
+Esses arquivos organizam o conhecimento técnico usado durante a execução das aplicações Flask. Além de conceitos derivados da modelagem ontológica, incluem elementos específicos de implementação e geração de testes, como bibliotecas, métodos, constantes, pinos e restrições de código.
+
+**Distinção importante:** o protótipo experimental não consulta diretamente a ontologia OWL e não executa consultas SPARQL. Os arquivos YAML constituem a fonte operacional de conhecimento incorporada aos prompts. Não há sincronização automática entre os arquivos OWL e YAML.
+
+A ontologia OWL é disponibilizada para documentar a modelagem conceitual da pesquisa. Caso o arquivo seja uma revisão posterior à realização dos experimentos originais, essa diferença deve ser registrada no histórico do repositório.
+
+## 4. Arquitetura da abordagem
+
+A implementação compreende quatro partes:
+
+**Apresentação:** interface web para escolha do sensor, definição de parâmetros e visualização do código gerado.
+
+**Representação do conhecimento:** arquivos YAML com as informações técnicas e operacionais dos componentes IoT.
+
+**Orquestração:** construção das instruções encaminhadas ao modelo de linguagem a partir da tarefa solicitada, dos parâmetros do usuário e do conhecimento estruturado.
+
+**Geração por IA:** chamada à API do modelo de linguagem para produzir código destinado ao Arduino.
+
+O fluxo principal pode ser representado por:
 
 ```text
 Interface Web (Flask)
         |
         v
-Seleção do Sensor e Parâmetros
+Seleção do Sensor e dos Parâmetros
         |
         v
-Representação de Conhecimento (YAML)
+Carregamento do YAML
         |
         v
 Construção do Prompt
         |
         v
-Modelo de Linguagem (LLM)
+Modelo de Linguagem
         |
         v
-Geração de Código C++ / AUnit
+Código C++ Gerado
         |
         v
-Visualização do Código Gerado
+Apresentação do Resultado
 ```
 
-A aplicação realiza a geração dos artefatos, mas não executa automaticamente os testes nos dispositivos físicos.
+O protótipo **gera código**, mas não realiza automaticamente sua compilação nem a execução dos testes em hardware físico.
 
-## 3. Organização do Repositório
+## 5. Condições experimentais
 
-```text
-sbqs2026-iot-test-generation/
-|
-|-- README.md
-|-- requirements.txt
-|-- .env.example
-|-- .gitignore
-|
-|-- app_baseline.py
-|-- app_ontology_guided.py
-|
-|-- ontologias/
-|   |-- DS18B20.yml
-|   |-- HCSR04.yml
-|
-|-- templates/
-|   |-- base.html
-|   |-- home.html
-|   |-- plataforma.html
-|   |-- formulario.html
-|   |-- resultado.html
-|   |-- index.html
-|
-|-- experiments/
-    |-- README.md
-    |
-    |-- baseline/
-    |   |-- prompts/
-    |   |-- generated/
-    |   |-- logs/
-    |
-    |-- ontology_guided/
-        |-- prompts/
-        |-- generated/
-        |-- logs/
-```
+Foram utilizadas duas configurações para uma comparação qualitativa e exploratória.
 
-Os arquivos `requirements.txt`, `.gitignore` e `experiments/README.md` devem ser adicionados caso ainda não estejam presentes no repositório.
+### 5.1. Condição sem contexto ontológico
 
-## 4. Versões Experimentais
+**Aplicação:** `app_baseline.py`  
+**Diretório:** `experimentos/sem_ontologia/`
 
-O repositório disponibiliza duas configurações para investigar a influência do conhecimento estruturado na geração de casos de teste.
+Nessa condição, o modelo recebe uma solicitação genérica de geração de testes ou código para um componente IoT, sem incorporar ao prompt o conjunto de propriedades técnicas estruturadas da ontologia.
 
-### 4.1. Versão sem Contexto Ontológico — Baseline
+A aplicação pode utilizar os YAML para a interface e os formulários, mas esse conhecimento não é utilizado como contexto ontológico explícito na solicitação encaminhada ao modelo.
 
-**Arquivo:** `app_baseline.py`
+Essa condição funciona como referência exploratória para observar as saídas obtidas sem o enriquecimento estrutural do prompt.
 
-Nesta condição, o modelo de linguagem recebe uma instrução genérica solicitando a geração de casos de teste para determinado sensor IoT.
+### 5.2. Condição orientada por conhecimento ontológico
 
-Embora a aplicação utilize os arquivos YAML para apresentar os componentes e construir os formulários, as propriedades técnicas estruturadas não são incorporadas ao prompt.
+**Aplicação:** `app_ontology_guided.py`  
+**Diretório:** `experimentos/com_ontologia/`
 
-Essa condição é utilizada como referência exploratória para analisar a geração sem contextualização ontológica explícita.
+Nessa condição, o prompt incorpora informações estruturadas dos YAML, como:
 
-### 4.2. Versão Orientada por Ontologia
-
-**Arquivo:** `app_ontology_guided.py`
-
-Nesta condição, o modelo recebe um prompt estruturado contendo informações derivadas da representação ontológica.
-
-O contexto fornecido inclui:
-
-- Hierarquia de classes;
-- Propriedades de objeto e de dados;
-- Limites operacionais e valores de erro;
+- Hierarquias de classes e mapeamentos ontológicos;
+- Propriedades de objeto e propriedades de dados;
+- Limites de medição, resolução e valores de erro;
 - Protocolos de comunicação;
 - Bibliotecas de software e testes;
-- Configurações de hardware;
+- Configurações de hardware e pinos;
 - Interfaces funcionais;
-- Parâmetros selecionados pelo usuário;
-- Restrições e instruções para geração do código.
+- Restrições para geração de código.
 
-O objetivo é orientar a produção de casos de teste mais relacionados às características técnicas dos componentes físicos.
+**Limitação da comparação:** as condições diferem no volume de contexto e em suas instruções. Assim, os resultados não permitem atribuir exclusivamente à presença da ontologia todas as diferenças observadas.
 
-As duas configurações diferem tanto na quantidade de contexto fornecido quanto nas instruções de geração. Portanto, a comparação não permite atribuir exclusivamente à ontologia todas as diferenças observadas nos resultados.
+## 6. Construção dos prompts
 
-## 5. Construção dos Prompts
+A construção das instruções é realizada pela função `build_prompt()` nas aplicações experimentais.
 
-A construção dos prompts é realizada pela função `build_prompt()`, presente nas aplicações Flask.
+Na condição orientada por ontologia, o prompt reúne o contexto da tarefa, os parâmetros selecionados, o modo de execução, as instruções de geração e o conhecimento estruturado extraído do YAML.
 
-Na versão orientada por ontologia, o prompt é formado pela combinação de:
+A representação operacional é incorporada ao prompt em formato estruturado, incluindo JSON.
 
 ```text
 Contexto da Tarefa
         |
         v
-Parâmetros Selecionados pelo Usuário
+Parâmetros do Usuário
         |
         v
 Modo de Execução
         |
         v
-Instruções Obrigatórias
+Instruções de Geração
         |
         v
-Conhecimento Estruturado (JSON)
+Conhecimento Estruturado
         |
         v
-Envio ao Modelo de Linguagem
+Modelo de Linguagem
 ```
 
-A representação YAML do componente é convertida para JSON e incorporada ao prompt.
+O modelo recebe instruções para produzir código direcionado à plataforma Arduino. A qualidade e a validade técnica das saídas dependem de revisão posterior.
 
-A aplicação também envia uma instrução de sistema que orienta o modelo a atuar como especialista em C++ e Arduino e retornar apenas o código solicitado.
+## 7. Modelo de linguagem
 
-As instruções de geração incluem restrições relacionadas ao framework de testes, interfaces permitidas, configurações de hardware e padrões de código proibidos.
+A implementação experimental utiliza a API da OpenAI com o modelo **GPT-4o mini**.
 
-## 6. Configuração do Modelo de Linguagem
-
-Os experimentos utilizaram a API da OpenAI com os seguintes parâmetros:
+As configurações documentadas no projeto incluem:
 
 | Parâmetro | Configuração |
 |---|---|
@@ -184,39 +204,31 @@ Os experimentos utilizaram a API da OpenAI com os seguintes parâmetros:
 | Presence penalty | 0,1 |
 | Timeout | 90 segundos |
 
-A aplicação utiliza a função `generate_code()` para enviar o prompt e recuperar o código produzido pelo modelo.
+Esses valores devem ser conferidos nas chamadas atuais ao SDK antes da publicação de uma versão definitiva do repositório.
 
-As respostas geradas são apresentadas na interface web e registradas nos logs para apoiar a análise experimental.
+A utilização da API requer credenciais próprias e pode gerar custos. Execuções posteriores não necessariamente retornam as mesmas saídas, mesmo quando os parâmetros são mantidos.
 
-A geração pode apresentar variações entre execuções, mesmo quando são utilizados parâmetros de configuração semelhantes.
+## 8. Componentes IoT estudados
 
-## 7. Representação do Conhecimento
+### 8.1. Sensor DS18B20
 
-Os arquivos YAML estão localizados no diretório `ontologias/`.
-
-Cada arquivo representa informações técnicas de um componente IoT.
-
-### 7.1. Sensor DS18B20
-
-Sensor digital utilizado para medição de temperatura.
-
-Entre as propriedades representadas estão:
+Sensor digital de temperatura com comunicação 1-Wire.
 
 | Propriedade | Valor |
 |---|---|
-| Temperatura mínima | -55 °C |
+| Temperatura mínima | −55 °C |
 | Temperatura máxima | 125 °C |
 | Resolução | 0,0625 °C |
-| Valor de erro | -127 °C |
+| Valor de erro | −127 °C |
 | Protocolo | 1-Wire |
-| Bibliotecas | OneWire e DallasTemperature |
-| Framework de testes | AUnit |
+| Bibliotecas de produção | OneWire e DallasTemperature |
+| Biblioteca de testes | AUnit |
 
-### 7.2. Sensor HC-SR04
+O arquivo YAML também contém definições sobre pinos, inicialização, interfaces funcionais e regras de geração.
 
-Sensor ultrassônico utilizado para medição de distância.
+### 8.2. Sensor HC-SR04
 
-Entre as propriedades representadas estão:
+Sensor ultrassônico destinado à medição de distância.
 
 | Propriedade | Valor |
 |---|---|
@@ -226,171 +238,158 @@ Entre as propriedades representadas estão:
 | Timeout | 30.000 µs |
 | Pulso Trigger | 10 µs |
 | Velocidade do som | 0,0343 cm/µs |
-| Framework de testes | AUnit |
+| Biblioteca de testes | AUnit |
 
-As representações também incluem informações sobre pinos de comunicação, interfaces funcionais, inicialização de hardware e restrições de geração.
+O YAML documenta ainda os pinos Trigger e Echo, os métodos empregados nas medições e as restrições para geração do código.
 
-## 8. Instalação e Execução
+## 9. Instalação e execução
 
-### 8.1. Pré-requisitos
+### 9.1. Pré-requisitos
 
 - Python 3.11 ou superior;
-- Flask;
-- PyYAML;
-- Biblioteca OpenAI para Python;
-- python-dotenv;
-- Chave de API da OpenAI.
+- Dependências listadas em `requirements.txt`;
+- Chave de API válida da OpenAI;
+- Acesso à internet para as chamadas ao modelo.
 
-### 8.2. Clonar o Repositório
+O arquivo `requirements.txt` precisa estar disponível no repositório para que o procedimento abaixo seja utilizado.
+
+### 9.2. Clonar o repositório
 
 ```bash
 git clone https://github.com/maiconrogerrosario/sbqs2026-iot-test-generation.git
-
 cd sbqs2026-iot-test-generation
 ```
 
-### 8.3. Instalar as Dependências
+### 9.3. Instalar as dependências
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 8.4. Configurar a API
+### 9.4. Configurar as credenciais
 
-Crie um arquivo `.env` na raiz do projeto e informe sua chave de API:
+Crie um arquivo `.env` na raiz do projeto, tomando como referência `.env.example`:
 
-```text
+```dotenv
 OPENAI_API_KEY=sua_chave_api
 ```
 
-Não publique o arquivo `.env` nem suas credenciais no repositório.
+Não compartilhe a chave real, nem publique o arquivo `.env`.
 
-### 8.5. Executar a Versão Baseline
+### 9.5. Executar a condição sem contexto ontológico
 
 ```bash
 python app_baseline.py
 ```
 
-### 8.6. Executar a Versão Orientada por Ontologia
+### 9.6. Executar a condição orientada por ontologia
 
 ```bash
 python app_ontology_guided.py
 ```
 
-Execute apenas uma versão por vez, pois ambas utilizam a mesma porta local.
+Execute uma aplicação por vez caso ambas utilizem a mesma porta local.
 
-Após iniciar a aplicação, acesse:
+Acesse no navegador:
 
 ```text
 http://127.0.0.1:5000
 ```
 
-## 9. Artefatos Experimentais
+### 9.7. Procedimento básico de uso
 
-Os artefatos dos experimentos estão disponíveis no diretório:
+1. Inicie a aplicação desejada.
+2. Selecione a plataforma e um dos sensores disponíveis.
+3. Informe ou revise os parâmetros apresentados no formulário.
+4. Escolha o modo de teste, quando disponível.
+5. Solicite a geração do código.
+6. Examine a saída retornada na interface.
 
-`experiments/`
+A geração de código não comprova, isoladamente, sua compilação, execução ou correção funcional.
 
-A organização separa os resultados das duas condições experimentais:
+## 10. Materiais experimentais
 
-**`baseline/`**
+A pasta `experimentos/` organiza os materiais associados às duas condições da investigação.
 
-Contém prompts genéricos, códigos gerados e logs da condição sem contexto ontológico.
+A estrutura prevista separa:
 
-**`ontology_guided/`**
+- `prompts/`: instruções submetidas ao modelo;
+- `codigos_gerados/`: códigos retornados pelo modelo;
+- `logs/`: registros associados às execuções.
 
-Contém prompts estruturados, códigos gerados e logs da condição orientada por ontologia.
+Os resultados devem ser identificados por sensor, condição experimental e data de execução, quando essas informações estiverem disponíveis.
 
-Cada diretório possui subpastas destinadas aos prompts, aos códigos C++ e aos registros das execuções.
+### 10.1. Execuções adicionais de 14/10/2026
 
-### 9.1. Experimentos Adicionais — 14/10/2026
+Foram realizadas novas execuções com os sensores DS18B20 e HC-SR04 nas duas condições experimentais.
 
-Foram realizadas novas execuções com os sensores DS18B20 e HC-SR04 em ambas as condições experimentais.
+Na condição sem contexto ontológico, as saídas incluíram programas de leitura e monitoramento dos sensores, sem estrutura de testes automatizados utilizando AUnit.
 
-Na condição baseline, o modelo produziu programas destinados à leitura e ao monitoramento dos sensores, sem gerar testes automatizados utilizando AUnit.
+Na condição orientada por ontologia, foram produzidos códigos com estruturas de teste, asserções e parâmetros relacionados às características dos componentes. Foram observados cinco blocos de teste para o DS18B20 e quatro para o HC-SR04, além de inconsistências técnicas e funcionais.
 
-Na condição orientada por ontologia, as respostas incluíram estruturas de teste com asserções e parâmetros relacionados às características técnicas dos componentes.
+**Essas execuções adicionais não reproduzem necessariamente as saídas originais analisadas no artigo.** Os materiais posteriores devem permanecer identificados separadamente e não podem ser apresentados como reprodução exata dos resultados históricos.
 
-As execuções adicionais produziram cinco blocos de teste para o DS18B20 e quatro para o HC-SR04, embora tenham sido identificadas inconsistências técnicas e funcionais.
+Para detalhes de cada execução, consulte `experimentos/README.md`, caso esse arquivo tenha sido disponibilizado.
 
-Esses experimentos não correspondem necessariamente às mesmas gerações utilizadas na avaliação original apresentada no artigo.
+## 11. Reprodutibilidade e limitações
 
-A documentação detalhada está disponível em `experiments/README.md`.
+A pesquisa apresenta uma avaliação qualitativa e exploratória, centrada na correspondência entre conhecimento técnico dos componentes e elementos incorporados ao código gerado.
 
-## 10. Reprodutibilidade
+Entre as limitações identificadas estão:
 
-Para realizar novas execuções da abordagem:
-
-1. Clone o repositório.
-2. Instale as dependências.
-3. Configure a chave de API da OpenAI.
-4. Execute a versão experimental desejada.
-5. Selecione a plataforma Arduino e um dos sensores disponíveis.
-6. Configure os parâmetros do componente.
-7. Escolha o modo de teste.
-8. Solicite a geração do código.
-9. Analise o resultado apresentado pela aplicação.
-
-Os arquivos de experimentos permitem examinar as instruções e os códigos produzidos nas execuções documentadas, desde que sejam disponibilizadas as versões integrais dos prompts e as saídas originais do modelo.
-
-A reprodução do procedimento não garante respostas idênticas, considerando a variabilidade dos modelos de linguagem.
-
-## 11. Avaliação e Limitações
-
-A avaliação apresentada no artigo possui caráter qualitativo e exploratório.
-
-A análise concentra-se na correspondência entre o conhecimento técnico dos sensores e os elementos incorporados aos códigos gerados, como constantes, configurações, chamadas de funções e asserções.
-
-Os resultados indicam a viabilidade inicial da utilização de conhecimento estruturado para orientar a geração de artefatos de teste.
-
-Entretanto, foram identificadas limitações:
-
-- Avaliação restrita aos sensores DS18B20 e HC-SR04;
-- Geração de código com inconsistências técnicas e funcionais;
+- Escopo experimental restrito aos sensores DS18B20 e HC-SR04;
+- Possibilidade de inconsistências técnicas e funcionais no código gerado;
 - Ausência de compilação e execução sistemática dos testes;
-- Ausência de avaliação quantitativa de cobertura e detecção de defeitos;
-- Utilização de YAML como representação operacional, sem consultas SPARQL diretas;
-- Diferenças entre os prompts das condições experimentais, dificultando isolar exclusivamente o efeito da ontologia.
+- Ausência de avaliação quantitativa de cobertura de código e detecção de defeitos;
+- Utilização de YAML na aplicação, sem consulta direta a OWL/SPARQL;
+- Diferenças entre as instruções das condições comparadas;
+- Variabilidade das respostas produzidas pelo modelo de linguagem;
+- Indisponibilidade de parte das saídas históricas originais, quando aplicável.
 
-Consequentemente, os códigos gerados devem ser considerados artefatos preliminares que necessitam de revisão técnica antes de sua utilização em hardware real.
+A reprodução do procedimento de geração **não garante a reprodução literal dos códigos ou resultados qualitativos apresentados no artigo**.
 
-## 12. Tecnologias Utilizadas
+Os programas produzidos pelo modelo devem ser revisados antes de serem compilados ou executados em hardware real.
 
-- Python;
-- Flask;
+## 12. Tecnologias utilizadas
+
+- Python e Flask;
 - PyYAML;
-- OpenAI API;
-- GPT-4o mini;
-- OWL e Protégé (modelagem do conhecimento);
-- YAML e JSON (representação operacional);
-- Arduino;
-- C++;
+- OpenAI API e GPT-4o mini;
+- OWL e Protégé;
+- YAML e JSON;
+- Arduino e C++;
 - AUnit.
 
-## 13. Artigo Científico
+## 13. Artigo científico
 
-**Título:** An Ontology- and LLM-Based Approach for Automatic Test Case Generation in IoT Devices
+**Título:** An Ontology- and LLM-Based Approach for Automatic Test Case Generation in IoT Devices  
+**Autores:** Maicon Roger do Rosario e André Luís Andrade Menolli  
+**Evento:** XXV Simpósio Brasileiro de Qualidade de Software (SBQS 2026)  
+**Local:** Maringá, Paraná, Brasil  
+**Período:** 10 a 13 de novembro de 2026
 
-**Autores:** Maicon Roger do Rosario e André Luís Andrade Menolli.
+O artigo apresenta a arquitetura da abordagem, a modelagem do conhecimento, a implementação inicial do protótipo e a avaliação exploratória.
 
-**Evento:** XXV Simpósio Brasileiro de Qualidade de Software — SBQS 2026.
+## 14. Disponibilidade do código e dos experimentos
 
-**Local:** Maringá, Paraná, Brasil.
+O código-fonte, a modelagem ontológica, as representações operacionais e os materiais experimentais disponibilizados neste projeto podem ser consultados no repositório:
 
-**Período:** 10 a 13 de novembro de 2026.
+**https://github.com/maiconrogerrosario/sbqs2026-iot-test-generation**
 
-O artigo apresenta a arquitetura proposta, a representação do conhecimento, a implementação inicial do protótipo e a avaliação exploratória com sensores IoT.
+O repositório destina-se à documentação, inspeção e continuidade da pesquisa. O material disponível poderá ser atualizado ao longo do desenvolvimento, com registro das alterações pelo histórico do Git.
 
-## 14. Licença e Utilização
+Este repositório não afirma reproduzir integralmente as saídas históricas originais do artigo.
 
-Este repositório é disponibilizado para fins acadêmicos, científicos e de pesquisa.
+## 15. Licença e direitos autorais
 
-As condições formais de reutilização, modificação e redistribuição deverão observar o arquivo de licença do projeto, caso disponibilizado.
+Copyright (C) 2026 The Authors.
 
-## 15. Considerações Finais
+A disponibilização pública dos arquivos não concede automaticamente autorização irrestrita para sua modificação, redistribuição ou exploração comercial.
 
-Este repositório disponibiliza uma implementação inicial de uma abordagem que combina conhecimento estruturado derivado de ontologias leves e modelos de linguagem para apoiar a geração automática de casos de teste funcionais na camada de dispositivos IoT.
+As permissões de reutilização deverão seguir a licença efetivamente adotada pelos titulares dos direitos autorais. Na ausência de licença explícita, não se deve presumir uma autorização geral de reutilização.
 
-Os artefatos experimentais permitem examinar o processo de construção dos prompts e os códigos produzidos pelo modelo.
+## 16. Considerações finais
 
-A abordagem demonstra potencial para apoiar desenvolvedores na elaboração inicial de testes destinados à validação da integração entre firmware e componentes físicos, permanecendo necessárias etapas posteriores de verificação, compilação, execução e avaliação sistemática.
+Este repositório documenta uma implementação experimental que utiliza conhecimento estruturado, derivado de uma ontologia leve, para orientar modelos de linguagem na geração de casos de teste funcionais para dispositivos IoT.
+
+A abordagem oferece uma base inicial para estudar o apoio de LLMs à atividade de testes de firmware. Permanecem necessárias avaliações posteriores envolvendo compilação, execução, detecção de defeitos e integração automatizada com ambientes de teste.
